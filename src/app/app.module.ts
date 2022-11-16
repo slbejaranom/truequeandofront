@@ -8,6 +8,7 @@ import { MenuComponent } from './components/principal/menu/menu.component';
 import { IntroComponent } from './components/principal/intro/intro.component';
 import { LoginComponent } from './components/principal/login/login.component';
 import { RegisterComponent } from './components/principal/register/register.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { RegisterComponent } from './components/principal/register/register.comp
     RegisterComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule
   ],
