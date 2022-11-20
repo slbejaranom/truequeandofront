@@ -24,14 +24,14 @@ export class LoginComponent implements OnInit {
         password:loginForm.value.password,
         nombre:"",
       };
-      this.authService.auth(usuario).subscribe(
-        response => {
-          //ToDo login logic
+      this.authService.auth(usuario).subscribe({
+        complete: () => {
+          //ToDo: Login session logic
         },
-        error => {
+        error: () => {
 
         }
-      );
+      });
     }
     else{
 
@@ -41,5 +41,4 @@ export class LoginComponent implements OnInit {
   backToMain(){
     this.router.navigateByUrl("/");
   }
-
 }
