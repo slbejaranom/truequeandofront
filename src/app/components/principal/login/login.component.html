@@ -5,12 +5,12 @@
   <div class="formContainer">
     <form #loginForm = "ngForm" (ngSubmit)="onsubmit(loginForm)">
       <label>Email</label>
-      <input name="user" ngModel required #username="ngModel" placeholder="Ingresa tu email">
+      <input type="email" name="user" ngModel required #username="ngModel" placeholder="Ingresa tu email">
       <label>Contraseña</label>
-      <input name="password" ngModel required #password="ngModel" placeholder="Ingresa tu contraseña">
+      <input type="password" name="password" ngModel required #password="ngModel" placeholder="Ingresa tu contraseña">
       <div class="buttonContainer">
-        <button class="button" (click)="backToMain()">Cancelar</button>
-        <button class="button positive">Ingresar</button>
+        <button type="button" (click)="backToMain()">Cancelar</button>
+        <button type="submit" class="button positive">Ingresar</button>
       </div>
     </form>
   </div>

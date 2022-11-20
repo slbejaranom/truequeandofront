@@ -43,12 +43,12 @@ body {
 button {
   background-color: white;
   width: 14vw;
-  height: 5vh;
+  height: 7vh;
   margin-right:2vw;
   cursor: pointer;
   font-size: 0.8em;
   color: $primary-color;
-  border-radius:$button-border-radius
+  border-radius:$button-border-radius;
 }
 
 input {
