@@ -32,7 +32,19 @@
                 </option>
             </select>
             </div>
-        </div>       
+        </div>
+        <label>Email</label>
+        <input type="email" name="username" ngModel required #username="ngModel" placeholder="Ingresa tu email" [ngClass]="{wrong: !validUser}" email>
+        <div class="two-row-input">
+          <div class="two-row-input-column">
+              <label>Telefono</label>
+              <input type="number" name="telefono" ngModel required #telefono="ngModel" placeholder="Ingresa tu telefono" [ngClass]="{wrong: !validTelefono}">
+          </div>            
+          <div class="two-row-input-column">
+              <label>Contraseña</label>
+              <input type="password" name="password" ngModel required #password="ngModel" placeholder="Ingresa tu contraseña" [ngClass]="{wrong: !validPassword}">
+          </div>            
+      </div>
         <div class="buttonContainer">
           <button type="button" (click)="backToMain()">Cancelar</button>
           <button type="submit" class="button positive">Ingresar</button>

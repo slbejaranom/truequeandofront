@@ -4,7 +4,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/domain/usuario';
 import { AuthService } from 'src/app/services/auth.service';
-import { Departamento } from './departamento';
+import { Departamento } from './dto/departamento';
 
 @Component({
   selector: 'app-register',
@@ -20,6 +20,7 @@ export class RegisterComponent implements OnInit {
   validNombre : boolean = true;
   validApellido : boolean = true;
   validDireccion : boolean = true;
+  validTelefono : boolean = true;  
   serviceError : boolean = false;  
   departamentos : Departamento[] = [];
   ciudades : string[] = [];
@@ -45,6 +46,7 @@ export class RegisterComponent implements OnInit {
 
   onsubmit(registerForm : NgForm){
     if(registerForm.valid){
+      this.verifyLoginErrors(registerForm)
       let usuario : Usuario = {
         id:0,
         email:registerForm.value.username,
@@ -53,7 +55,7 @@ export class RegisterComponent implements OnInit {
       };
       this.authService.auth(usuario).subscribe({
         complete: () => {
-          //ToDo: Login session logic
+          //ToDo: Register session logic
         },
         error: (err : HttpErrorResponse) => {
           this.serviceError = true;
@@ -70,13 +72,16 @@ export class RegisterComponent implements OnInit {
     this.router.navigateByUrl("/");
   }
 
-  verifyLoginErrors(loginForm : NgForm){
-    this.validPassword = loginForm.controls["password"]?.valid;
-    this.validUser = loginForm.controls["username"]?.valid;
+  verifyLoginErrors(registerForm : NgForm){
+    this.validPassword = registerForm.controls["password"]?.valid;
+    this.validUser = registerForm.controls["username"]?.valid;
+    this.validApellido = registerForm.controls["apellido"]?.valid;
+    this.validNombre = registerForm.controls["nombre"]?.valid;
+    this.validDireccion = registerForm.controls["direccion"]?.valid;
+    this.validTelefono = registerForm.controls["telefono"]?.valid;
   }
 
   onSelectDepartamento(idDepartamento : string){
     this.ciudades = this.departamentos[Number(idDepartamento)].ciudades;
-    console.log(this.ciudades);
   }
 }
