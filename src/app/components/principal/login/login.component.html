@@ -1,0 +1,18 @@
+<div class="centered">
+  <h2>¡Hola!</h2>
+  <h3>¡Te extrañamos mucho!</h3>
+
+  <div class="formContainer">
+    <form #loginForm = "ngForm" (ngSubmit)="onsubmit(loginForm)">
+      <label>Email</label>
+      <input type="email" name="username" ngModel required #username="ngModel" placeholder="Ingresa tu email" [ngClass]="{wrong: !validUser}" email>
+      <label>Contraseña</label>
+      <input type="password" name="password" ngModel required #password="ngModel" placeholder="Ingresa tu contraseña" [ngClass]="{wrong: !validPassword}">
+      <div class="buttonContainer">
+        <button type="button" (click)="backToMain()">Cancelar</button>
+        <button type="submit" class="button positive">Ingresar</button>
+      </div>
+      <span *ngIf="serviceError" class="error-text">{{error.message}}</span>
+    </form>
+  </div>
+</div>

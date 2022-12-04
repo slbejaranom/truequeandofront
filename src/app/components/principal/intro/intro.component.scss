@@ -1,0 +1,13 @@
+@import "../../../../styles.scss";
+
+.centered{
+  margin-top:-10vh;
+  width: 60vw;
+  text-align: center;
+  font-size: 2em;
+}
+
+.centered p {
+  text-align: justify;
+  padding-top:10vh;
+}
