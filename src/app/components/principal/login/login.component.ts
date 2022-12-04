@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
   }
 
   onsubmit(loginForm : NgForm){
+    this.verifyLoginErrors(loginForm);
     if(loginForm.valid){
       let usuario : Usuario = {
         id:0,
@@ -33,7 +34,7 @@ export class LoginComponent implements OnInit {
         password:loginForm.value.password,
         nombre:"",
       };
-      this.authService.auth(usuario).subscribe({
+      /*this.authService.auth(usuario).subscribe({
         complete: () => {
           //ToDo: Login session logic
         },
@@ -41,10 +42,8 @@ export class LoginComponent implements OnInit {
           this.serviceError = true;
           this.error = this.authService.handleError(err);
         }
-      });
-    }
-    else{
-      this.verifyLoginErrors(loginForm);
+      });*/
+      this.router.navigateByUrl("home");
     }
   }
 

@@ -55,6 +55,10 @@ input {
   border-radius: $button-border-radius;
 }
 
+select{  
+  border-radius: $button-border-radius;  
+}
+
 .positive{
   background-color: $primary-color;
   color: white;
@@ -62,9 +66,30 @@ input {
 }
 
 .wrong{
-  border: 1px solid red;
+  border: 2px solid red;
 }
 
 .error-text{
   color: red;
+}
+
+.two-row-input {
+  width:100%;
+}
+
+.two-row-input input{
+  width:95%;
+}
+
+.two-row-input select{
+  width:98%;
+}
+
+.two-row-input label{
+  width:95%;    
+}
+
+.two-row-input-column{
+  display: inline-block;
+  width:50%;
 }
