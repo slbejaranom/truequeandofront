@@ -1,1 +1,33 @@
-<p>register works!</p>
+<div class="centered">
+    <h3>¿Sabías que con truequeando puedes obtener un producto que quieres con algo que ya no uses?</h3>
+  
+    <div class="formContainer">
+      <form #registerForm = "ngForm" (ngSubmit)="onsubmit(registerForm)">
+        <div class="two-row-input">
+            <div class="two-row-input-column">
+                <label>Nombre</label>
+                <input type="text" name="nombre" ngModel required #nombre="ngModel" placeholder="Ingresa tu nombre" [ngClass]="{wrong: !validNombre}">
+            </div>            
+            <div class="two-row-input-column">
+                <label>Apellido</label>
+                <input type="text" name="apellido" ngModel required #apellido="ngModel" placeholder="Ingresa tu apellido" [ngClass]="{wrong: !validApellido}">
+            </div>            
+        </div>
+        <label>Direccion</label>
+        <input type="text" name="direccion" ngModel required #direccion="ngModel" placeholder="Ingresa tu direccion" [ngClass]="{wrong: !validDireccion}">
+        <div class="two-row-input">
+            <div class="two-row-input-column">
+                <label>Municipio</label>
+                <select>
+                    <option *ngFor="let municipio of municipios"></option>
+                </select>
+            </div>
+        </div>       
+        <div class="buttonContainer">
+          <button type="button" (click)="backToMain()">Cancelar</button>
+          <button type="submit" class="button positive">Ingresar</button>
+        </div>
+        <span *ngIf="serviceError" class="error-text">{{error.message}}</span>
+      </form>
+    </div>
+  </div>

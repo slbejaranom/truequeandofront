@@ -7,6 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrincipalComponent implements OnInit {
 
+  validUser : boolean = true;
+  validPassword : boolean = true;
+  serviceError : boolean = false;
+  error : Error = {
+    name:"",
+    message: ""
+  };
+
   constructor() { }
 
   ngOnInit(): void {
