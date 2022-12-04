@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
   }
 
   onsubmit(loginForm : NgForm){
+    this.verifyLoginErrors(loginForm);
     if(loginForm.valid){
       let usuario : Usuario = {
         id:0,
@@ -42,9 +43,6 @@ export class LoginComponent implements OnInit {
           this.error = this.authService.handleError(err);
         }
       });
-    }
-    else{
-      this.verifyLoginErrors(loginForm);
     }
   }
 

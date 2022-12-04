@@ -45,8 +45,8 @@ export class RegisterComponent implements OnInit {
   }
 
   onsubmit(registerForm : NgForm){
-    if(registerForm.valid){
-      this.verifyLoginErrors(registerForm)
+    this.verifyLoginErrors(registerForm);
+    if(registerForm.valid){      
       let usuario : Usuario = {
         id:0,
         email:registerForm.value.username,
@@ -62,9 +62,6 @@ export class RegisterComponent implements OnInit {
           this.error = this.authService.handleError(err);
         }
       });
-    }
-    else{
-      this.verifyLoginErrors(registerForm);
     }
   }
 
