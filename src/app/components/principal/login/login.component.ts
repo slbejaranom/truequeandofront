@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
         password:loginForm.value.password,
         nombre:"",
       };
-      this.authService.auth(usuario).subscribe({
+      /*this.authService.auth(usuario).subscribe({
         complete: () => {
           //ToDo: Login session logic
         },
@@ -42,7 +42,8 @@ export class LoginComponent implements OnInit {
           this.serviceError = true;
           this.error = this.authService.handleError(err);
         }
-      });
+      });*/
+      this.router.navigateByUrl("home");
     }
   }
 
