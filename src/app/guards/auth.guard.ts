@@ -8,13 +8,12 @@ import { AuthService } from '../services/auth.service';
 })
 export class AuthGuard implements CanActivate {
 
-  constructor(private authService : AuthService){}
+  constructor(public authService : AuthService){}
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    //Implementar logica de verificación de token      
+    //Implementar logica de verificación de token     
     return true;
-  }
-  
+  }  
 }
