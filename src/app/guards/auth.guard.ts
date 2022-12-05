@@ -13,8 +13,7 @@ export class AuthGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      //Implementar logica de verificación de token
+    //Implementar logica de verificación de token     
     return true;
-  }
-  
+  }  
 }
