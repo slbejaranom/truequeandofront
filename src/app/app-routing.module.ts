@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
+import { LandingComponent } from './components/home/landing/landing.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 import { IntroComponent } from './components/principal/intro/intro.component';
 import { LoginComponent } from './components/principal/login/login.component';
 import { PrincipalComponent } from './components/principal/principal.component';
@@ -29,7 +31,17 @@ const routes: Routes = [
   {
     path: "home",
     component: HomeComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
+    children:[
+      {
+        path: "main",
+        component: LandingComponent
+      }
+    ]
+  },
+  {
+    path: "**",
+    component: NotFoundComponent
   }
 ];
 

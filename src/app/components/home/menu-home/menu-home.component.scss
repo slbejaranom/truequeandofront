@@ -1,0 +1,37 @@
+@import "../../../../styles.scss";
+
+nav {
+    background-color: $primary-color;    
+    width: 100%;
+    height:100vh;
+    text-align: center;   
+    position:relative; 
+}
+li a{
+    width: 100%;
+}
+li {
+    display:block;
+    padding: 2vh 0vh 2vh 0vh;
+    list-style: none;
+    margin-top:0px;
+    position:relative;
+    border-bottom: 2px solid white;            
+}
+li:hover{
+    background-color: $button-hover-color;
+}
+.button{
+    margin-right:auto;
+    margin-left:auto;    
+    display:block;
+    border-radius: $button-border-radius;
+    color: white;
+}
+.button:link{
+  text-decoration:none;
+}
+.btn-salir{
+    top:81.6vh;
+    border-top: 2px solid white;
+}

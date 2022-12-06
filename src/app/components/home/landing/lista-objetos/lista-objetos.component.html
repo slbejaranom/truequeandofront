@@ -1,0 +1,10 @@
+<div class="contenedor">
+    <div class="button">
+        <button>Registrar objeto</button>
+    </div>
+    <div class="control">
+        <app-objeto *ngFor="let elemento of listaNumeroElementos; let i=index" ngClass="objeto-{{i}}" [elemento]=listaElementosActiva[elemento]>
+
+        </app-objeto>        
+    </div>
+</div>

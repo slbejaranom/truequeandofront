@@ -1,0 +1,9 @@
+<nav>    
+      <li *ngFor="let opcion of opciones">
+        <a routerLink={{opcion.ruta}} class="button">{{opcion.texto}}</a>
+      </li>  
+      <li class="btn-salir">
+        <a routerLink="salir" class="button">Salir</a>
+      </li>      
+</nav>
+  
