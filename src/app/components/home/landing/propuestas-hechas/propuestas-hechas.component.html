@@ -1,0 +1,30 @@
+<section>        
+    <table>
+        <caption>Propuestas que has hecho</caption>
+        <tr>
+            <td>
+                <table class="header">                    
+                    <tr>
+                        <th *ngFor="let encabezado of displayedColumns" [ngClass]="{id : encabezado == 'id'}">
+                            {{encabezado}}
+                        </th>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <div class="filas">
+                <table>
+                    <tr *ngFor="let trueque of trueques">
+                        <td class="id">{{trueque.id}}</td>
+                        <td>{{trueque.estado}}</td>
+                        <td>{{trueque.fecha.toLocaleDateString('es-CO')}}</td>                        
+                        <td>{{trueque.elemento1.nombre}}</td>
+                        <td>{{trueque.elemento2.nombre}}</td>
+                        <td>{{trueque.transportador.nit}}</td>
+                    </tr>
+                </table>
+            </div>            
+        </tr>
+    </table>
+</section>
