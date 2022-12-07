@@ -14,7 +14,12 @@ import { MenuHomeComponent } from './components/home/menu-home/menu-home.compone
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { LandingComponent } from './components/home/landing/landing.component';
 import { ListaObjetosComponent } from './components/home/landing/lista-objetos/lista-objetos.component';
-import { ObjetoComponent } from './components/home/landing/lista-objetos/objeto/objeto.component'
+import { ObjetoComponent } from './components/home/landing/lista-objetos/objeto/objeto.component';
+import { PropuestasHechasComponent } from './components/home/landing/propuestas-hechas/propuestas-hechas.component'
+import { MatTableModule } from '@angular/material/table'
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { PropuestasRecibidasComponent } from './components/home/landing/propuestas-recibidas/propuestas-recibidas.component'
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -29,13 +34,18 @@ import { ObjetoComponent } from './components/home/landing/lista-objetos/objeto/
     NotFoundComponent,
     LandingComponent,
     ListaObjetosComponent,
-    ObjetoComponent
+    ObjetoComponent,
+    PropuestasHechasComponent,
+    PropuestasRecibidasComponent
   ],
   imports: [
     HttpClientModule,
     FormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,    
+    MatTableModule,
+    MatPaginatorModule,
+    MatProgressSpinnerModule,    
   ],
   providers: [],
   bootstrap: [AppComponent]

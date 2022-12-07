@@ -5,7 +5,8 @@ nav {
     width: 100%;
     height:100vh;
     text-align: center;   
-    position:relative; 
+    position:relative;
+    font-size: 2.8vh;
 }
 li a{
     width: 100%;
@@ -32,6 +33,8 @@ li:hover{
   text-decoration:none;
 }
 .btn-salir{
-    top:81.6vh;
+    position:absolute;
+    width:100%;        
+    top:80vh;
     border-top: 2px solid white;
 }

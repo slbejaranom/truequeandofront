@@ -8,6 +8,8 @@ import { Elemento } from 'src/app/domain/elemento';
 })
 export class ObjetoComponent implements OnInit {
 
+  muchoTexto:boolean = false;
+
   @Input() elemento : Elemento = {
     "id": 0,
     "altura": 10,
@@ -26,6 +28,9 @@ export class ObjetoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if(this.elemento.nombre.length >= 19){
+      this.muchoTexto = true;
+    }
   }
 
 }

@@ -100,3 +100,6 @@ select{
   display: grid;
   grid-template-columns: 20vw 0vw 80vw;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
