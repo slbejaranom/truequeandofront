@@ -1,28 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-];
-
-/**
- * @title Flex table where one column's cells has a greater height than others.
- */
+import { Trueque } from 'src/app/domain/trueque';
+import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import { RechazarPropuestaComponent } from './rechazar-propuesta/rechazar-propuesta.component';
 
 @Component({
   selector: 'app-propuestas-recibidas',
@@ -31,10 +10,683 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class PropuestasRecibidasComponent implements OnInit {
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  trueques : Trueque[] = [{
+    id: 0,
+    estado: 0,
+    fecha: new Date("01/11/1996"),
+    transportador: {
+      precioKilogramo: 0,
+      precioKilometro: 0,
+      precioMetroCubico: 0,
+      nit: "Soy un nit"
+    },
+    elemento1:{
+      id: 0,
+      nombre: "Bicicleta"
+    },
+    elemento2:{
+      id: 1,
+      nombre: "Trompeta"
+    },
+    usuario1:{
+      email: "sebastian@bejarano.com",
+      nombre: "Sebastian Bejarano"
+    },
+    usuario2:{
+      email: "katherin@balero.com",
+      nombre: "Katherin Balero"
+    }
+  },
+  {
+    id: 0,
+    estado: 0,
+    fecha: new Date("01/11/1996"),
+    transportador: {
+      precioKilogramo: 0,
+      precioKilometro: 0,
+      precioMetroCubico: 0,
+      nit: "Soy un nit"
+    },
+    elemento1:{
+      id: 0,
+      nombre: "Bicicleta"
+    },
+    elemento2:{
+      id: 1,
+      nombre: "Trompeta"
+    },
+    usuario1:{
+      email: "sebastian@bejarano.com",
+      nombre: "Sebastian Bejarano"
+    },
+    usuario2:{
+      email: "katherin@balero.com",
+      nombre: "Katherin Balero"
+    }
+  },
+  {
+    id: 0,
+    estado: 0,
+    fecha: new Date("01/11/1996"),
+    transportador: {
+      precioKilogramo: 0,
+      precioKilometro: 0,
+      precioMetroCubico: 0,
+      nit: "Soy un nit"
+    },
+    elemento1:{
+      id: 0,
+      nombre: "Bicicleta"
+    },
+    elemento2:{
+      id: 1,
+      nombre: "Trompeta"
+    },
+    usuario1:{
+      email: "sebastian@bejarano.com",
+      nombre: "Sebastian Bejarano"
+    },
+    usuario2:{
+      email: "katherin@balero.com",
+      nombre: "Katherin Balero"
+    }
+  },
+  {
+    id: 0,
+    estado: 0,
+    fecha: new Date("01/11/1996"),
+    transportador: {
+      precioKilogramo: 0,
+      precioKilometro: 0,
+      precioMetroCubico: 0,
+      nit: "Soy un nit"
+    },
+    elemento1:{
+      id: 0,
+      nombre: "Bicicleta"
+    },
+    elemento2:{
+      id: 1,
+      nombre: "Trompeta"
+    },
+    usuario1:{
+      email: "sebastian@bejarano.com",
+      nombre: "Sebastian Bejarano"
+    },
+    usuario2:{
+      email: "katherin@balero.com",
+      nombre: "Katherin Balero"
+    }
+  },
+  {
+    id: 0,
+    estado: 0,
+    fecha: new Date("01/11/1996"),
+    transportador: {
+      precioKilogramo: 0,
+      precioKilometro: 0,
+      precioMetroCubico: 0,
+      nit: "Soy un nit"
+    },
+    elemento1:{
+      id: 0,
+      nombre: "Bicicleta"
+    },
+    elemento2:{
+      id: 1,
+      nombre: "Trompeta"
+    },
+    usuario1:{
+      email: "sebastian@bejarano.com",
+      nombre: "Sebastian Bejarano"
+    },
+    usuario2:{
+      email: "katherin@balero.com",
+      nombre: "Katherin Balero"
+    }
+  },
+  {
+    id: 0,
+    estado: 0,
+    fecha: new Date("01/11/1996"),
+    transportador: {
+      precioKilogramo: 0,
+      precioKilometro: 0,
+      precioMetroCubico: 0,
+      nit: "Soy un nit"
+    },
+    elemento1:{
+      id: 0,
+      nombre: "Bicicleta"
+    },
+    elemento2:{
+      id: 1,
+      nombre: "Trompeta"
+    },
+    usuario1:{
+      email: "sebastian@bejarano.com",
+      nombre: "Sebastian Bejarano"
+    },
+    usuario2:{
+      email: "katherin@balero.com",
+      nombre: "Katherin Balero"
+    }
+  },
+  {
+    id: 0,
+    estado: 0,
+    fecha: new Date("01/11/1996"),
+    transportador: {
+      precioKilogramo: 0,
+      precioKilometro: 0,
+      precioMetroCubico: 0,
+      nit: "Soy un nit"
+    },
+    elemento1:{
+      id: 0,
+      nombre: "Bicicleta"
+    },
+    elemento2:{
+      id: 1,
+      nombre: "Trompeta"
+    },
+    usuario1:{
+      email: "sebastian@bejarano.com",
+      nombre: "Sebastian Bejarano"
+    },
+    usuario2:{
+      email: "katherin@balero.com",
+      nombre: "Katherin Balero"
+    }
+  },
+  {
+    id: 0,
+    estado: 0,
+    fecha: new Date("01/11/1996"),
+    transportador: {
+      precioKilogramo: 0,
+      precioKilometro: 0,
+      precioMetroCubico: 0,
+      nit: "Soy un nit"
+    },
+    elemento1:{
+      id: 0,
+      nombre: "Bicicleta"
+    },
+    elemento2:{
+      id: 1,
+      nombre: "Trompeta"
+    },
+    usuario1:{
+      email: "sebastian@bejarano.com",
+      nombre: "Sebastian Bejarano"
+    },
+    usuario2:{
+      email: "katherin@balero.com",
+      nombre: "Katherin Balero"
+    }
+  },
+  {
+    id: 0,
+    estado: 0,
+    fecha: new Date("01/11/1996"),
+    transportador: {
+      precioKilogramo: 0,
+      precioKilometro: 0,
+      precioMetroCubico: 0,
+      nit: "Soy un nit"
+    },
+    elemento1:{
+      id: 0,
+      nombre: "Bicicleta"
+    },
+    elemento2:{
+      id: 1,
+      nombre: "Trompeta"
+    },
+    usuario1:{
+      email: "sebastian@bejarano.com",
+      nombre: "Sebastian Bejarano"
+    },
+    usuario2:{
+      email: "katherin@balero.com",
+      nombre: "Katherin Balero"
+    }
+  },
+  {
+    id: 0,
+    estado: 0,
+    fecha: new Date("01/11/1996"),
+    transportador: {
+      precioKilogramo: 0,
+      precioKilometro: 0,
+      precioMetroCubico: 0,
+      nit: "Soy un nit"
+    },
+    elemento1:{
+      id: 0,
+      nombre: "Bicicleta"
+    },
+    elemento2:{
+      id: 1,
+      nombre: "Trompeta"
+    },
+    usuario1:{
+      email: "sebastian@bejarano.com",
+      nombre: "Sebastian Bejarano"
+    },
+    usuario2:{
+      email: "katherin@balero.com",
+      nombre: "Katherin Balero"
+    }
+  },
+  {
+    id: 0,
+    estado: 0,
+    fecha: new Date("01/11/1996"),
+    transportador: {
+      precioKilogramo: 0,
+      precioKilometro: 0,
+      precioMetroCubico: 0,
+      nit: "Soy un nit"
+    },
+    elemento1:{
+      id: 0,
+      nombre: "Bicicleta"
+    },
+    elemento2:{
+      id: 1,
+      nombre: "Trompeta"
+    },
+    usuario1:{
+      email: "sebastian@bejarano.com",
+      nombre: "Sebastian Bejarano"
+    },
+    usuario2:{
+      email: "katherin@balero.com",
+      nombre: "Katherin Balero"
+    }
+  },
+  {
+    id: 0,
+    estado: 0,
+    fecha: new Date("01/11/1996"),
+    transportador: {
+      precioKilogramo: 0,
+      precioKilometro: 0,
+      precioMetroCubico: 0,
+      nit: "Soy un nit"
+    },
+    elemento1:{
+      id: 0,
+      nombre: "Bicicleta"
+    },
+    elemento2:{
+      id: 1,
+      nombre: "Trompeta"
+    },
+    usuario1:{
+      email: "sebastian@bejarano.com",
+      nombre: "Sebastian Bejarano"
+    },
+    usuario2:{
+      email: "katherin@balero.com",
+      nombre: "Katherin Balero"
+    }
+  },
+  {
+    id: 0,
+    estado: 0,
+    fecha: new Date("01/11/1996"),
+    transportador: {
+      precioKilogramo: 0,
+      precioKilometro: 0,
+      precioMetroCubico: 0,
+      nit: "Soy un nit"
+    },
+    elemento1:{
+      id: 0,
+      nombre: "Bicicleta"
+    },
+    elemento2:{
+      id: 1,
+      nombre: "Trompeta"
+    },
+    usuario1:{
+      email: "sebastian@bejarano.com",
+      nombre: "Sebastian Bejarano"
+    },
+    usuario2:{
+      email: "katherin@balero.com",
+      nombre: "Katherin Balero"
+    }
+  },
+  {
+    id: 0,
+    estado: 0,
+    fecha: new Date("01/11/1996"),
+    transportador: {
+      precioKilogramo: 0,
+      precioKilometro: 0,
+      precioMetroCubico: 0,
+      nit: "Soy un nit"
+    },
+    elemento1:{
+      id: 0,
+      nombre: "Bicicleta"
+    },
+    elemento2:{
+      id: 1,
+      nombre: "Trompeta"
+    },
+    usuario1:{
+      email: "sebastian@bejarano.com",
+      nombre: "Sebastian Bejarano"
+    },
+    usuario2:{
+      email: "katherin@balero.com",
+      nombre: "Katherin Balero"
+    }
+  },
+  {
+    id: 0,
+    estado: 0,
+    fecha: new Date("01/11/1996"),
+    transportador: {
+      precioKilogramo: 0,
+      precioKilometro: 0,
+      precioMetroCubico: 0,
+      nit: "Soy un nit"
+    },
+    elemento1:{
+      id: 0,
+      nombre: "Bicicleta"
+    },
+    elemento2:{
+      id: 1,
+      nombre: "Trompeta"
+    },
+    usuario1:{
+      email: "sebastian@bejarano.com",
+      nombre: "Sebastian Bejarano"
+    },
+    usuario2:{
+      email: "katherin@balero.com",
+      nombre: "Katherin Balero"
+    }
+  },
+  {
+    id: 0,
+    estado: 0,
+    fecha: new Date("01/11/1996"),
+    transportador: {
+      precioKilogramo: 0,
+      precioKilometro: 0,
+      precioMetroCubico: 0,
+      nit: "Soy un nit"
+    },
+    elemento1:{
+      id: 0,
+      nombre: "Bicicleta"
+    },
+    elemento2:{
+      id: 1,
+      nombre: "Trompeta"
+    },
+    usuario1:{
+      email: "sebastian@bejarano.com",
+      nombre: "Sebastian Bejarano"
+    },
+    usuario2:{
+      email: "katherin@balero.com",
+      nombre: "Katherin Balero"
+    }
+  },
+  {
+    id: 0,
+    estado: 0,
+    fecha: new Date("01/11/1996"),
+    transportador: {
+      precioKilogramo: 0,
+      precioKilometro: 0,
+      precioMetroCubico: 0,
+      nit: "Soy un nit"
+    },
+    elemento1:{
+      id: 0,
+      nombre: "Bicicleta"
+    },
+    elemento2:{
+      id: 1,
+      nombre: "Trompeta"
+    },
+    usuario1:{
+      email: "sebastian@bejarano.com",
+      nombre: "Sebastian Bejarano"
+    },
+    usuario2:{
+      email: "katherin@balero.com",
+      nombre: "Katherin Balero"
+    }
+  },
+  {
+    id: 0,
+    estado: 0,
+    fecha: new Date("01/11/1996"),
+    transportador: {
+      precioKilogramo: 0,
+      precioKilometro: 0,
+      precioMetroCubico: 0,
+      nit: "Soy un nit"
+    },
+    elemento1:{
+      id: 0,
+      nombre: "Bicicleta"
+    },
+    elemento2:{
+      id: 1,
+      nombre: "Trompeta"
+    },
+    usuario1:{
+      email: "sebastian@bejarano.com",
+      nombre: "Sebastian Bejarano"
+    },
+    usuario2:{
+      email: "katherin@balero.com",
+      nombre: "Katherin Balero"
+    }
+  },
+  {
+    id: 0,
+    estado: 0,
+    fecha: new Date("01/11/1996"),
+    transportador: {
+      precioKilogramo: 0,
+      precioKilometro: 0,
+      precioMetroCubico: 0,
+      nit: "Soy un nit"
+    },
+    elemento1:{
+      id: 0,
+      nombre: "Bicicleta"
+    },
+    elemento2:{
+      id: 1,
+      nombre: "Trompeta"
+    },
+    usuario1:{
+      email: "sebastian@bejarano.com",
+      nombre: "Sebastian Bejarano"
+    },
+    usuario2:{
+      email: "katherin@balero.com",
+      nombre: "Katherin Balero"
+    }
+  },
+  {
+    id: 0,
+    estado: 0,
+    fecha: new Date("01/11/1996"),
+    transportador: {
+      precioKilogramo: 0,
+      precioKilometro: 0,
+      precioMetroCubico: 0,
+      nit: "Soy un nit"
+    },
+    elemento1:{
+      id: 0,
+      nombre: "Bicicleta"
+    },
+    elemento2:{
+      id: 1,
+      nombre: "Trompeta"
+    },
+    usuario1:{
+      email: "sebastian@bejarano.com",
+      nombre: "Sebastian Bejarano"
+    },
+    usuario2:{
+      email: "katherin@balero.com",
+      nombre: "Katherin Balero"
+    }
+  },
+  {
+    id: 0,
+    estado: 0,
+    fecha: new Date("01/11/1996"),
+    transportador: {
+      precioKilogramo: 0,
+      precioKilometro: 0,
+      precioMetroCubico: 0,
+      nit: "Soy un nit"
+    },
+    elemento1:{
+      id: 0,
+      nombre: "Bicicleta"
+    },
+    elemento2:{
+      id: 1,
+      nombre: "Trompeta"
+    },
+    usuario1:{
+      email: "sebastian@bejarano.com",
+      nombre: "Sebastian Bejarano"
+    },
+    usuario2:{
+      email: "katherin@balero.com",
+      nombre: "Katherin Balero"
+    }
+  },
+  {
+    id: 0,
+    estado: 0,
+    fecha: new Date("01/11/1996"),
+    transportador: {
+      precioKilogramo: 0,
+      precioKilometro: 0,
+      precioMetroCubico: 0,
+      nit: "Soy un nit"
+    },
+    elemento1:{
+      id: 0,
+      nombre: "Bicicleta"
+    },
+    elemento2:{
+      id: 1,
+      nombre: "Trompeta"
+    },
+    usuario1:{
+      email: "sebastian@bejarano.com",
+      nombre: "Sebastian Bejarano"
+    },
+    usuario2:{
+      email: "katherin@balero.com",
+      nombre: "Katherin Balero"
+    }
+  },
+  {
+    id: 0,
+    estado: 0,
+    fecha: new Date("01/11/1996"),
+    transportador: {
+      precioKilogramo: 0,
+      precioKilometro: 0,
+      precioMetroCubico: 0,
+      nit: "Soy un nit"
+    },
+    elemento1:{
+      id: 0,
+      nombre: "Bicicleta"
+    },
+    elemento2:{
+      id: 1,
+      nombre: "Trompeta"
+    },
+    usuario1:{
+      email: "sebastian@bejarano.com",
+      nombre: "Sebastian Bejarano"
+    },
+    usuario2:{
+      email: "katherin@balero.com",
+      nombre: "Katherin Balero"
+    }
+  },
+  {
+    id: 0,
+    estado: 0,
+    fecha: new Date("01/11/1996"),
+    transportador: {
+      precioKilogramo: 0,
+      precioKilometro: 0,
+      precioMetroCubico: 0,
+      nit: "Soy un nit"
+    },
+    elemento1:{
+      id: 0,
+      nombre: "Bicicleta"
+    },
+    elemento2:{
+      id: 1,
+      nombre: "Trompeta"
+    },
+    usuario1:{
+      email: "sebastian@bejarano.com",
+      nombre: "Sebastian Bejarano"
+    },
+    usuario2:{
+      email: "katherin@balero.com",
+      nombre: "Katherin Balero"
+    }
+  }];
+
+  displayedColumns: string[] = ['id', 'fecha', 'usuario1', 'elemento2', 'elemento1', 'estado'];
+  dataSource = this.trueques;
 
   ngOnInit(): void {
-    
-  }   
+
+  }
+
+  constructor(public dialog : MatDialog){
+
+  }
+
+  aceptarTrueque(trueque : Trueque){
+    //ToDo colocar modal de aceptar trueque
+    console.log("Estoy aceptando trueque:"+ trueque.id);
+  }
+
+  rechazarTrueque(trueque : Trueque){
+    //ToDo colocar modal de rechazar trueque
+    console.log("Estoy rechazando trueque:"+ trueque.id);
+    this.openDialog("100ms","100ms", trueque);
+
+  }
+
+  openDialog(enterAnimationDuration: string, exitAnimationDuration: string, trueque : Trueque): void {
+    this.dialog.open(RechazarPropuestaComponent, {
+      enterAnimationDuration,
+      exitAnimationDuration,
+      data: trueque
+    });
+  }
 }

@@ -1,31 +1,41 @@
 <div class="content">
   <h1>Propuestas que te han hecho</h1>
-<section>      
+<section>
   <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
     <!-- Position Column -->
-    <ng-container matColumnDef="position">
-      <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+      <mat-cell *matCellDef="let trueque"> {{trueque.id}} </mat-cell>
     </ng-container>
-  
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+
+    <ng-container matColumnDef="fecha">
+      <mat-header-cell *matHeaderCellDef> Fecha </mat-header-cell>
+      <mat-cell *matCellDef="let trueque"> {{trueque.fecha.toLocaleDateString('es-CO')}} </mat-cell>
     </ng-container>
-  
-    <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
-      <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+
+    <ng-container matColumnDef="usuario1">
+      <mat-header-cell *matHeaderCellDef> Esta persona </mat-header-cell>
+      <mat-cell *matCellDef="let trueque"> {{trueque.usuario1.nombre}} </mat-cell>
     </ng-container>
-  
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="symbol">
-      <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+
+    <ng-container matColumnDef="elemento2">
+      <mat-header-cell *matHeaderCellDef> Quiere tu </mat-header-cell>
+      <mat-cell *matCellDef="let trueque"> {{trueque.elemento2.nombre}} </mat-cell>
     </ng-container>
-  
+
+    <ng-container matColumnDef="elemento1">
+      <mat-header-cell *matHeaderCellDef> Te dará </mat-header-cell>
+      <mat-cell *matCellDef="let trueque"> {{trueque.elemento1.nombre}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="estado">
+      <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
+      <mat-cell *matCellDef="let trueque">
+        <button (click)="aceptarTrueque(trueque)" class="button">Aceptar</button>
+        <mat-icon (click)="rechazarTrueque(trueque)">delete</mat-icon>
+      </mat-cell>
+    </ng-container>
+
     <mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
   </mat-table>

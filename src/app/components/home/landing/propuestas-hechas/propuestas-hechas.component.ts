@@ -7,8 +7,9 @@ import { OperadorLogistico } from 'src/app/domain/operadorLogistico';
   templateUrl: './propuestas-hechas.component.html',
   styleUrls: ['./propuestas-hechas.component.scss']
 })
-export class PropuestasHechasComponent implements OnInit{
 
+
+export class PropuestasHechasComponent implements OnInit{
   trueques : Trueque[] = [{
     id: 0,
     estado: 0,
@@ -658,11 +659,14 @@ export class PropuestasHechasComponent implements OnInit{
     }
   }];
 
-  displayedColumns: string[] = ['id', 'estado', 'fecha', 'elemento1', 'elemento2', 'transportador'];  
-  
-  constructor() { }
+  displayedColumns: string[] = ['id', 'fecha', 'elemento1', 'elemento2', 'usuario2', 'estado'];
+  dataSource = this.trueques;
+
+  constructor() {
+
+  }
 
   ngOnInit(): void {
-    
+
   }
 }

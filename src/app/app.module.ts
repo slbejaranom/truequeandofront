@@ -20,6 +20,10 @@ import { MatTableModule } from '@angular/material/table'
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { PropuestasRecibidasComponent } from './components/home/landing/propuestas-recibidas/propuestas-recibidas.component'
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDialogModule} from '@angular/material/dialog';
+import { RechazarPropuestaComponent } from './components/home/landing/propuestas-recibidas/rechazar-propuesta/rechazar-propuesta.component'
 
 @NgModule({
   declarations: [
@@ -36,16 +40,20 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     ListaObjetosComponent,
     ObjetoComponent,
     PropuestasHechasComponent,
-    PropuestasRecibidasComponent
+    PropuestasRecibidasComponent,
+    RechazarPropuestaComponent
   ],
   imports: [
     HttpClientModule,
     FormsModule,
     BrowserModule,
-    AppRoutingModule,    
+    AppRoutingModule,
     MatTableModule,
     MatPaginatorModule,
-    MatProgressSpinnerModule,    
+    MatProgressSpinnerModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

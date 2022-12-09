@@ -1,4 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+
+
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+
+$truequeandofront-primary: mat.define-palette(mat.$indigo-palette);
+$truequeandofront-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+$truequeandofront-warn: mat.define-palette(mat.$red-palette);
+
+$truequeandofront-theme: mat.define-light-theme((
+  color: (
+    primary: $truequeandofront-primary,
+    accent: $truequeandofront-accent,
+    warn: $truequeandofront-warn,
+  )
+));
+
+@include mat.all-component-themes($truequeandofront-theme);
+
 $primary-color: rgb(195, 0, 255);
 $button-hover-color: rgb(164, 0, 214);
 $selected-color: rgb(115, 0, 150);
@@ -57,8 +78,8 @@ input {
   border-radius: $button-border-radius;
 }
 
-select{  
-  border-radius: $button-border-radius;  
+select{
+  border-radius: $button-border-radius;
 }
 
 .positive{
@@ -88,7 +109,7 @@ select{
 }
 
 .two-row-input label{
-  width:95%;    
+  width:95%;
 }
 
 .two-row-input-column{
@@ -100,6 +121,24 @@ select{
   display: grid;
   grid-template-columns: 20vw 0vw 80vw;
 }
+.mat-header-cell {
+  background-color: white;
+  color: inherit;
+  font-size: 3vh;
+}
+.mat-header-row{
+  min-height:4vh;
+  font-family: Liberation-Sans-bold;
+}
+.mat-row{
+  min-height: 3vh;
+}
+.mat-cell{
+  color: inherit;
+  font-size: 2vh;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

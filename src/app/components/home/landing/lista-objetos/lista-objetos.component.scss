@@ -28,10 +28,34 @@ button{
     display:contents;
 }
 @for $i from 0 through 3{
-    .objeto-#{$i}{        
+    .objeto-#{$i}{
         grid-row: 2;
-        grid-column: #{$i+2};  
+        grid-column: #{$i+2};
         margin-left:1vw;
         margin-right:1vw;
     }
+}
+.left-arrow {
+    grid-row:2;
+    grid-column:1;
+    width:100%;
+    margin:0;
+    position: relative;
+}
+.right-arrow {
+    grid-row:2;
+    grid-column:6;
+    height:100%;
+    margin:0;
+    position:relative;
+}
+.left-arrow img, .right-arrow img{
+    height:70%;
+    width:50%;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }

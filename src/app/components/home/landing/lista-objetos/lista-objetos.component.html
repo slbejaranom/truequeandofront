@@ -2,9 +2,15 @@
     <div class="button">
         <button>Registrar objeto</button>
     </div>
+    <div class="left-arrow" (click)="slide(false)">
+        <img src="../../../../../assets/left-arrow.png"/>
+    </div>
     <div class="control">
         <app-objeto *ngFor="let elemento of listaNumeroElementos; let i=index" ngClass="objeto-{{i}}" [elemento]=listaElementosActiva[elemento]>
 
-        </app-objeto>        
+        </app-objeto>
+    </div>
+    <div class="right-arrow" (click)="slide(true)">
+        <img src="../../../../../assets/right-arrow.png"/>
     </div>
 </div>

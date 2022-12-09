@@ -1,29 +1,20 @@
 @import "../../../../../styles.scss";
 .content{
     margin-top:2vh;
-    width:90%; 
+    width:90%;
     margin-left:auto;
-    margin-right:auto;   
+    margin-right:auto;
 }
-section{    
+section{
     border-top:1px solid $primary-color;
-    width:100%;    
+    width:100%;
     height: 25vh;
     max-width: 100%;
     overflow: auto;
 }
-table {    
+table {
     width: 100%;
-}  
-.mat-header-cell {
-    background-color: white;        
-}
-.mat-header-row{
-    min-height:4vh;
-    font-family: Liberation-Sans-bold;
-}
-.mat-row{
-    min-height: 3vh;
+    color: $primary-color;
 }
 h1{
     font-size: 2em;
@@ -31,4 +22,12 @@ h1{
     font-family: Liberation-Sans-regular;
     font-weight: 100;
     position:sticky;
+}
+.button{
+    margin-right: 1vw;
+    width:6vw;
+    height:100%;
+    border: none;
+    background-color: $primary-color;
+    color:white;
 }
