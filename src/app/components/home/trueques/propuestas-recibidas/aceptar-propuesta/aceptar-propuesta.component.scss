@@ -1,0 +1,45 @@
+@import "../../../../../../styles.scss";
+.modal-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+}
+.mat-dialog-title{
+    grid-row: 1;
+    grid-column:1 / span 3;
+}
+.objeto-1{
+    grid-row:2;
+    grid-column:1;
+}
+.objeto-2{
+    grid-row:2;
+    grid-column:3;
+}
+.boton-confirmar{
+    grid-row: 3;
+    grid-column: 2;
+    background-color: white;
+    border: 1px solid $primary-color;
+    margin-left: auto;
+    margin-right: auto;
+}
+.boton-confirmar:hover{
+    background-color: $primary-color;
+    color:white;
+}
+.accept-image{
+    grid-row:2;
+    grid-column:2;
+    width:100%;
+    position: relative;
+}
+.accept-image img{
+    width:50%;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}

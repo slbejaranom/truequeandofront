@@ -9,7 +9,22 @@ import { LoginComponent } from './components/principal/login/login.component';
 import { RegisterComponent } from './components/principal/register/register.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { HomeComponent } from './components/home/home.component'
+import { HomeComponent } from './components/home/home.component';
+import { MenuHomeComponent } from './components/home/menu-home/menu-home.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { TruequesComponent } from './components/home/trueques/trueques.component';
+import { ListaObjetosComponent } from './components/home/trueques/lista-objetos/lista-objetos.component';
+import { ObjetoComponent } from './components/home/trueques/lista-objetos/objeto/objeto.component';
+import { PropuestasHechasComponent } from './components/home/trueques/propuestas-hechas/propuestas-hechas.component'
+import { MatTableModule } from '@angular/material/table'
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { PropuestasRecibidasComponent } from './components/home/trueques/propuestas-recibidas/propuestas-recibidas.component'
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDialogModule} from '@angular/material/dialog';
+import { RechazarPropuestaComponent } from './components/home/trueques/propuestas-recibidas/rechazar-propuesta/rechazar-propuesta.component';
+import { AceptarPropuestaComponent } from './components/home/trueques/propuestas-recibidas/aceptar-propuesta/aceptar-propuesta.component'
 
 @NgModule({
   declarations: [
@@ -19,13 +34,28 @@ import { HomeComponent } from './components/home/home.component'
     IntroComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    MenuHomeComponent,
+    NotFoundComponent,
+    TruequesComponent,
+    ListaObjetosComponent,
+    ObjetoComponent,
+    PropuestasHechasComponent,
+    PropuestasRecibidasComponent,
+    RechazarPropuestaComponent,
+    AceptarPropuestaComponent
   ],
   imports: [
     HttpClientModule,
     FormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatProgressSpinnerModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
