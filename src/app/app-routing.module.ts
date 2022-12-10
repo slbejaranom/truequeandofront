@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
+import { MainComponent } from './components/home/main/main.component';
 import { TruequesComponent } from './components/home/trueques/trueques.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { IntroComponent } from './components/principal/intro/intro.component';
@@ -36,6 +37,10 @@ const routes: Routes = [
       {
         path: "trueques",
         component: TruequesComponent
+      },
+      {
+        path: "main",
+        component: MainComponent
       }
     ]
   },

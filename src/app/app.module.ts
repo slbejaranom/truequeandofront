@@ -24,7 +24,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import { RechazarPropuestaComponent } from './components/home/trueques/propuestas-recibidas/rechazar-propuesta/rechazar-propuesta.component';
-import { AceptarPropuestaComponent } from './components/home/trueques/propuestas-recibidas/aceptar-propuesta/aceptar-propuesta.component'
+import { AceptarPropuestaComponent } from './components/home/trueques/propuestas-recibidas/aceptar-propuesta/aceptar-propuesta.component';
+import { MainComponent } from './components/home/main/main.component'
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { AceptarPropuestaComponent } from './components/home/trueques/propuestas
     PropuestasHechasComponent,
     PropuestasRecibidasComponent,
     RechazarPropuestaComponent,
-    AceptarPropuestaComponent
+    AceptarPropuestaComponent,
+    MainComponent
   ],
   imports: [
     HttpClientModule,
