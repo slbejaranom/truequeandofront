@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  rutaBase: "http://backend:8000"
 };
