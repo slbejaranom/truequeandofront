@@ -4,7 +4,7 @@ nav {
   border-right: 2px solid;
   border-right-color: $primary-color;
   background-color: white;
-  width: 100%;
+  width: 120%;
   height:100vh;
   text-align: center;
 }
@@ -15,12 +15,17 @@ nav div h2 {
   padding-bottom: 5vh;
 }
 
+h2 {
+  font-size: x-large;
+}
+
 li {
   display:block;
   padding: 1vh 0vh 1vh 0vh;
   list-style: none;
   margin-top:0px;
   position:relative;
+  font-size: medium;
 }
 
 .button{
@@ -28,7 +33,7 @@ li {
   margin-left:auto;
   padding: 1.5vh 0vh 1.5vh 0vh;
   display:block;
-  width:80%;
+  width:70%;
   border: $button-border;
   border-radius: $button-border-radius;
   color: $primary-color;

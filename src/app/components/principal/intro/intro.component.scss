@@ -1,13 +1,18 @@
 @import "../../../../styles.scss";
 
 .centered{
-  margin-top:-10vh;
-  width: 60vw;
+  margin-top:-5vh;
+  width: 70%;
   text-align: center;
   font-size: 2em;
 }
 
+ .title{
+  font-size: xx-large;
+ }
+
 .centered p {
+  line-height: initial;
   text-align: justify;
-  padding-top:10vh;
+  padding-top: 3vh;
 }

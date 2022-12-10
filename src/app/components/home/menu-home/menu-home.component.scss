@@ -3,9 +3,9 @@
 nav {
     background-color: $primary-color;    
     width: 100%;
-    height:100vh;
+    height:100%;
     text-align: center;   
-    position:relative;
+    position: relative;
     font-size: 2.8vh;
 }
 li a{
@@ -35,6 +35,6 @@ li:hover{
 .btn-salir{
     position:absolute;
     width:100%;        
-    top:80vh;
+    top: 92%;
     border-top: 2px solid white;
 }
