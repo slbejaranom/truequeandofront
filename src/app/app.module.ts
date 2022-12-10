@@ -12,7 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { MenuHomeComponent } from './components/home/menu-home/menu-home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { LandingComponent } from './components/home/landing/landing.component';
+import { TruequesComponent } from './components/home/landing/trueques.component';
 import { ListaObjetosComponent } from './components/home/landing/lista-objetos/lista-objetos.component';
 import { ObjetoComponent } from './components/home/landing/lista-objetos/objeto/objeto.component';
 import { PropuestasHechasComponent } from './components/home/landing/propuestas-hechas/propuestas-hechas.component'
@@ -36,7 +36,7 @@ import { RechazarPropuestaComponent } from './components/home/landing/propuestas
     HomeComponent,
     MenuHomeComponent,
     NotFoundComponent,
-    LandingComponent,
+    TruequesComponent,
     ListaObjetosComponent,
     ObjetoComponent,
     PropuestasHechasComponent,
