@@ -16,4 +16,8 @@ export class RechazarPropuestaComponent implements OnInit {
   ngOnInit(): void {
 
   }
+
+  rechazarTrueque(){
+    //ToDo implementar logica y back
+  }
 }

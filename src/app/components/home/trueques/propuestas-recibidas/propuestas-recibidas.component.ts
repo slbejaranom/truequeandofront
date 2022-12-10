@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Trueque } from 'src/app/domain/trueque';
 import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import { RechazarPropuestaComponent } from './rechazar-propuesta/rechazar-propuesta.component';
+import { AceptarPropuestaComponent } from './aceptar-propuesta/aceptar-propuesta.component';
+import { ComponentType } from '@angular/cdk/portal';
 
 @Component({
   selector: 'app-propuestas-recibidas',
@@ -673,17 +675,18 @@ export class PropuestasRecibidasComponent implements OnInit {
   aceptarTrueque(trueque : Trueque){
     //ToDo colocar modal de aceptar trueque
     console.log("Estoy aceptando trueque:"+ trueque.id);
+    this.openDialog("100ms","100ms", trueque, AceptarPropuestaComponent);
   }
 
   rechazarTrueque(trueque : Trueque){
     //ToDo colocar modal de rechazar trueque
     console.log("Estoy rechazando trueque:"+ trueque.id);
-    this.openDialog("100ms","100ms", trueque);
+    this.openDialog("100ms","100ms", trueque, RechazarPropuestaComponent);
 
   }
 
-  openDialog(enterAnimationDuration: string, exitAnimationDuration: string, trueque : Trueque): void {
-    this.dialog.open(RechazarPropuestaComponent, {
+  openDialog(enterAnimationDuration: string, exitAnimationDuration: string, trueque : Trueque, component : ComponentType<any>): void {
+    this.dialog.open(component, {
       enterAnimationDuration,
       exitAnimationDuration,
       data: trueque

@@ -12,18 +12,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { MenuHomeComponent } from './components/home/menu-home/menu-home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { TruequesComponent } from './components/home/landing/trueques.component';
-import { ListaObjetosComponent } from './components/home/landing/lista-objetos/lista-objetos.component';
-import { ObjetoComponent } from './components/home/landing/lista-objetos/objeto/objeto.component';
-import { PropuestasHechasComponent } from './components/home/landing/propuestas-hechas/propuestas-hechas.component'
+import { TruequesComponent } from './components/home/trueques/trueques.component';
+import { ListaObjetosComponent } from './components/home/trueques/lista-objetos/lista-objetos.component';
+import { ObjetoComponent } from './components/home/trueques/lista-objetos/objeto/objeto.component';
+import { PropuestasHechasComponent } from './components/home/trueques/propuestas-hechas/propuestas-hechas.component'
 import { MatTableModule } from '@angular/material/table'
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import { PropuestasRecibidasComponent } from './components/home/landing/propuestas-recibidas/propuestas-recibidas.component'
+import { PropuestasRecibidasComponent } from './components/home/trueques/propuestas-recibidas/propuestas-recibidas.component'
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
-import { RechazarPropuestaComponent } from './components/home/landing/propuestas-recibidas/rechazar-propuesta/rechazar-propuesta.component'
+import { RechazarPropuestaComponent } from './components/home/trueques/propuestas-recibidas/rechazar-propuesta/rechazar-propuesta.component';
+import { AceptarPropuestaComponent } from './components/home/trueques/propuestas-recibidas/aceptar-propuesta/aceptar-propuesta.component'
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { RechazarPropuestaComponent } from './components/home/landing/propuestas
     ObjetoComponent,
     PropuestasHechasComponent,
     PropuestasRecibidasComponent,
-    RechazarPropuestaComponent
+    RechazarPropuestaComponent,
+    AceptarPropuestaComponent
   ],
   imports: [
     HttpClientModule,
