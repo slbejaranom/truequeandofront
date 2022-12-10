@@ -1,19 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Usuario } from '../domain/usuario';
-import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  private readonly AUTH_URL : string = "";
+  private readonly AUTH_URL : string = environment.rutaBase+"/autenticarusuario";
 
   constructor(private httpClient : HttpClient) { }
 
   auth(usuario : Usuario){
-    return this.httpClient.post<Usuario>(this.AUTH_URL,usuario);
+    return this.httpClient.post<any>(this.AUTH_URL,usuario);
   }
 
   handleError(error : HttpErrorResponse):Error{
