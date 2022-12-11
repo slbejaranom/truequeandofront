@@ -40,9 +40,9 @@ export class LoginComponent implements OnInit {
           //ToDo: Login session logic
           if(data.errorMessage != null){
             this.serviceError = true;
-            this.error.message = data.errorMessage;            
+            this.error.message = data.errorMessage;                
           }
-          else{
+          else{            
             localStorage.setItem("accessToken", data.token);
             this.router.navigateByUrl("home/main");
           }
