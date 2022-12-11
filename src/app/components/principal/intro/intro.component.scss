@@ -16,3 +16,10 @@
   text-align: justify;
   padding-top: 3vh;
 }
+
+@media screen and (max-width: 800px){
+  .centered{
+    position: absolute;
+    margin-top: 40%;
+  }
+}
