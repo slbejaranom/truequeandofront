@@ -1,6 +1,6 @@
 <div>
     <h1>Tus objetos</h1>  
-    <app-lista-objetos></app-lista-objetos>  
-    <app-propuestas-hechas></app-propuestas-hechas>
-    <app-propuestas-recibidas></app-propuestas-recibidas>
+    <app-lista-objetos [listaElementos]="listaElementosUsuario"></app-lista-objetos>  
+    <app-propuestas-hechas [trueques]="listaTruequesHechosPorUsuario"></app-propuestas-hechas>
+    <app-propuestas-recibidas [trueques]="listaTruequesHechosAUsuario"></app-propuestas-recibidas>
 </div>
