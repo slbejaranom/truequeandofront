@@ -13,8 +13,10 @@
                 <input type="text" name="apellido" ngModel required #apellido="ngModel" placeholder="Ingresa tu apellido" [ngClass]="{wrong: !validApellido}">
             </div>            
         </div>
-        <label>Direccion</label>
+        <div class="one-row-input">
+          <label>Direccion</label>
         <input type="text" name="direccion" ngModel required #direccion="ngModel" placeholder="Ingresa tu direccion" [ngClass]="{wrong: !validDireccion}">
+        </div>
         <div class="two-row-input">
             <div class="two-row-input-column">
                 <label>Departamento</label>
@@ -33,8 +35,10 @@
             </select>
             </div>
         </div>
-        <label>Email</label>
+        <div class="one-row-input">
+          <label>Email</label>
         <input type="email" name="username" ngModel required #username="ngModel" placeholder="Ingresa tu email" [ngClass]="{wrong: !validUser}" email>
+        </div>
         <div class="two-row-input">
           <div class="two-row-input-column">
               <label>Telefono</label>

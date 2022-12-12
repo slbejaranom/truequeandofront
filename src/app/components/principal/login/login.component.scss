@@ -1,20 +1,26 @@
 @import "../../../../styles.scss";
 
 .centered{
-  margin-top:-10vh;
+  margin-top:-5vh;
   width: 60vw;
   text-align: center;
-  font-size: 2em;
+
 }
 h2, h3{
   margin: 0px;
 }
-
+h2{
+  font-size: xx-large;
+}
+h3{
+  font-size: x-large;
+}
 .formContainer{
-  padding-top:8vh;
+  padding-top:2.5vh;
   display:inline-block;
   text-align:justify;
   width: 50%;
+  font-size: x-large;
 }
 
 label{
@@ -27,7 +33,7 @@ label{
 input {
   width:100%;
   height:6vh;
-  font-size: 1em;
+  font-size: x-large;
 }
 
 .buttonContainer {
@@ -35,4 +41,25 @@ input {
   text-align:center;
   width:100%;
   display:block;
+}
+
+@media screen and (max-width: 800px){
+  .centered{
+    position: absolute;
+    margin-top: 40%;
+    max-height: 50%;
+  }
+
+  .formContainer{
+    width: 100%;
+  }
+
+  button{
+    width: 100%;
+  }
+
+  .positive{
+    margin-top: 2%;
+    margin-bottom: 10%;
+  }
 }
