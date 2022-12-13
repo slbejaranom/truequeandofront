@@ -2,8 +2,8 @@
     <h2 mat-dialog-title>Registra tu objeto</h2>
     <form #registrarObjetoForm="ngForm" (ngSubmit)="onsubmit(registrarObjetoForm)">
         <div class="img-selector">        
-            <input type="file" (change)="onImageUpload($event)" ngModel name="imagen" required #imagen="ngModel"/>
-            <img [src]="imageTemp" *ngIf="uploadedImage != null"/>
+            <input type="file" (change)="onImageUpload($event)" ngModel name="imagen" required #imagen="ngModel" accept="image/png, image/gif, image/jpeg" />
+            <img [src]="imageTemp" *ngIf="uploadedImage != null" [ngClass]="{imageconfig:uploadedImage}"/>
         </div>
         <div class="input-container-0">
             <label class="label">Nombre</label>

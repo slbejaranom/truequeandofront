@@ -4,7 +4,7 @@
 }
 .reg-objeto-container form{
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     column-gap: 1vw;
     display:grid;
 }
@@ -17,9 +17,10 @@
 .reg-objeto-container .img-selector{
     height:100%;
     grid-column: 1;
-    grid-row: 1 / span 7;
+    grid-row: 1 / span 7;    
+    height:50%;
 }
-.reg-objeto-container img{
+.imageconfig{
     width:100%;
 }
 .message-container{
