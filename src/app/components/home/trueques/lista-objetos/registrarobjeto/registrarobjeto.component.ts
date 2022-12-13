@@ -18,6 +18,7 @@ export class RegistrarobjetoComponent implements OnInit {
 
   uploadedImage: File | null;
   imageTemp : string |ArrayBuffer| null;
+  validTrial = true;
 
   constructor(public dialogRef : MatDialogRef<RegistrarobjetoComponent>, private router : Router, private truequeandoService : TruequeandoService) { 
     this.listarCategorias();
@@ -26,6 +27,10 @@ export class RegistrarobjetoComponent implements OnInit {
       let tokenArgs = atob(token).split(":");
       let email = tokenArgs[0];      
     }
+  }
+
+  cerrarModal(){
+    this.dialogRef.close();
   }
 
   onImageUpload(event : Event) {
@@ -42,8 +47,10 @@ export class RegistrarobjetoComponent implements OnInit {
   }
   async onsubmit(registrarObjetoForm : NgForm){
     if(!registrarObjetoForm.valid){
+      this.validTrial = false;
       return;
     }
+    this.validTrial = true;
     let token  = localStorage.getItem("accessToken"); 
     let email : string = "";   
     if(token != null){

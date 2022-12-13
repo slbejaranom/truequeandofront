@@ -4,7 +4,7 @@
 }
 .reg-objeto-container form{
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     column-gap: 1vw;
     display:grid;
 }
@@ -22,8 +22,14 @@
 .reg-objeto-container img{
     width:100%;
 }
-.button-container{
+.message-container{
     grid-row: 9;
+    grid-column: 1 / span 2;
+    color:red;
+    text-align: justify;
+}
+.button-container{
+    grid-row: 10;
     grid-column: 1 / span 2;
     width:100%;
     text-align: center;
