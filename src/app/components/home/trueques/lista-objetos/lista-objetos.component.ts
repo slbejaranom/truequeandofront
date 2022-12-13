@@ -1,6 +1,9 @@
+import { ComponentType } from '@angular/cdk/portal';
 import { Component, Input, OnInit, OnChanges } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Elemento } from 'src/app/domain/elemento';
+import { RegistrarobjetoComponent } from './registrarobjeto/registrarobjeto.component';
 
 @Component({
   selector: 'app-lista-objetos',
@@ -14,12 +17,23 @@ export class ListaObjetosComponent implements OnInit, OnChanges {
   listaElementosActiva : Elemento[] = [];
   listaNumeroElementos : number[]= [];
 
-  constructor(private router : Router) {
+  constructor(private router : Router, public dialog : MatDialog) {
     
+  }
+
+  openDialog(enterAnimationDuration: string, exitAnimationDuration: string, component : ComponentType<any>): void {
+    this.dialog.open(component, {
+      enterAnimationDuration,
+      exitAnimationDuration
+    });
   }
 
   ngOnInit(): void {
     
+  }
+
+  abrirModalRegistrar(){
+    this.openDialog("100ms", "100ms", RegistrarobjetoComponent);
   }
 
   ngOnChanges() : void{    

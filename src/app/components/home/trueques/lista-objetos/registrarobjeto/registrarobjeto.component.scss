@@ -1,0 +1,73 @@
+@import "../../../../../../styles.scss";
+.reg-objeto-container{    
+    color:$primary-color;
+}
+.reg-objeto-container form{
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    column-gap: 1vw;
+    display:grid;
+}
+.reg-objeto-container h2{
+    font-size: 5vh;
+    text-align: center;
+    grid-column: 1 / span 2;
+    grid-row: 1;
+}
+.reg-objeto-container .img-selector{
+    height:100%;
+    grid-column: 1;
+    grid-row: 1 / span 7;
+}
+.reg-objeto-container img{
+    width:100%;
+}
+.button-container{
+    grid-row: 9;
+    grid-column: 1 / span 2;
+    width:100%;
+    text-align: center;
+    display:block;
+}
+.button-container .aceptar{
+    height: 100%;
+    width:43%;
+    border: none;
+    background-color: rgb(195, 0, 255);
+    color: white;
+    font-size: medium;
+    margin-right: 0;
+}
+.button-container .negative{
+    height: 100%;
+    width:43%;
+    border: none;
+    background-color: white;
+    color: $primary-color;
+    font-size: medium;
+    margin-right: 0;
+    border: 1px solid $primary-color;
+}
+
+.button-container .negative:hover{
+    height: 100%;
+    width:43%;
+    border: none;
+    color: white;
+    background-color: $primary-color;    
+    font-size: medium;
+    margin-right: 0;
+}
+
+@for $i from 0 through 6 {
+    .reg-objeto-container .input-container-#{$i} {
+        grid-column: 2;
+        grid-row: #{$i+1};        
+    }
+}
+input{
+    width:100%;
+}
+select{
+    width:100%;
+}

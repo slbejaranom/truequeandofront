@@ -42,7 +42,8 @@ export class LoginComponent implements OnInit {
             this.serviceError = true;
             this.error.message = data.errorMessage;                
           }
-          else{            
+          else{      
+            localStorage.clear();
             localStorage.setItem("accessToken", data.token);
             this.router.navigateByUrl("home/main");
           }

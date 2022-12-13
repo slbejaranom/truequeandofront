@@ -3,8 +3,8 @@ import { OperadorLogistico } from "./operadorLogistico";
 import { Usuario } from "./usuario";
 
 export interface Trueque{
-    id: number;
-    estado: number;
+    id?: number;
+    estado?: number;
     fecha: Date;
     elemento1: Elemento,
     elemento2: Elemento,

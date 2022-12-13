@@ -1,0 +1,45 @@
+<div class="reg-objeto-container">
+    <h2 mat-dialog-title>Registra tu objeto</h2>
+    <form #registrarObjetoForm="ngForm" (ngSubmit)="onsubmit(registrarObjetoForm)">
+        <div class="img-selector">        
+            <input type="file" (change)="onImageUpload($event)" ngModel name="imagen" required #imagen="ngModel"/>
+            <img [src]="imageTemp" *ngIf="uploadedImage != null"/>
+        </div>
+        <div class="input-container-0">
+            <label class="label">Nombre</label>
+            <input type="text" ngModel name="nombre" required #nombre="ngModel"/>
+        </div>
+        <div class="input-container-1">
+            <label class="label">Categoría</label>
+            <select #categoriaSelect>
+                <option *ngFor="let categoria of categorias" [value]="categoria.id">
+                  {{categoria.descripcion}}
+                </option>
+            </select>
+        </div>
+        <div class="input-container-2">
+            <label class="label">Peso (Kg)</label>
+            <input type="number" ngModel name="peso" required #peso="ngModel"/>
+        </div>
+        <div class="input-container-3">
+            <label class="label">Valor</label>
+            <input type="number" ngModel name="valor" required #valor="ngModel"/>
+        </div>
+        <div class="input-container-4">
+            <label class="label">Altura</label>
+            <input type="number" ngModel name="altura" required #altura="ngModel"/>
+        </div>
+        <div class="input-container-5">
+            <label class="label">Anchura</label>
+            <input type="number" ngModel name="anchura" required #anchura="ngModel"/>
+        </div>
+        <div class="input-container-6">
+            <label class="label">Longitud</label>
+            <input type="number" ngModel name="longitud" required #longitud="ngModel"/>
+        </div>
+        <div class="button-container">
+            <button class="negative">Cancelar</button>
+            <button class="aceptar">Registrar</button>
+        </div>
+    </form>    
+</div>

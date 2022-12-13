@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Trueque } from 'src/app/domain/trueque';
-import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import {MatDialog} from '@angular/material/dialog';
 import { RechazarPropuestaComponent } from './rechazar-propuesta/rechazar-propuesta.component';
 import { AceptarPropuestaComponent } from './aceptar-propuesta/aceptar-propuesta.component';
 import { ComponentType } from '@angular/cdk/portal';
@@ -26,7 +26,6 @@ export class PropuestasRecibidasComponent implements OnInit , OnChanges{
   }
   ngOnChanges(changes: SimpleChanges): void {
     if(this.trueques != null)
-      console.log(this.trueques);
       this.dataSource = this.trueques;
   }
 
