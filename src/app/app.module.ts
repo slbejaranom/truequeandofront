@@ -25,7 +25,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import { RechazarPropuestaComponent } from './components/home/trueques/propuestas-recibidas/rechazar-propuesta/rechazar-propuesta.component';
 import { AceptarPropuestaComponent } from './components/home/trueques/propuestas-recibidas/aceptar-propuesta/aceptar-propuesta.component';
-import { MainComponent } from './components/home/main/main.component'
+import { MainComponent } from './components/home/main/main.component';
+import { RegistrarobjetoComponent } from './components/home/trueques/lista-objetos/registrarobjeto/registrarobjeto.component'
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { MainComponent } from './components/home/main/main.component'
     PropuestasRecibidasComponent,
     RechazarPropuestaComponent,
     AceptarPropuestaComponent,
-    MainComponent
+    MainComponent,
+    RegistrarobjetoComponent
   ],
   imports: [
     HttpClientModule,

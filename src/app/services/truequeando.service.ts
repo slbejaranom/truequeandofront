@@ -1,26 +1,29 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { Elemento } from '../domain/elemento';
 
 const RUTA_LISTAR_OBJETOS_USUARIOS : string = environment.rutaBase+"/listarelementosusuario";
 const RUTA_LISTAR_TRUEQUES_HECHOS_POR_USUARIO : string = environment.rutaBase+"/truequeshechosusuario";
 const RUTA_LISTAR_TRUEQUES_HECHOS_A_USUARIO : string = environment.rutaBase+"/truequesrecibidosusuario";
-const REQUEST_HEADERS : HttpHeaders = new HttpHeaders({
-  'Authorization':'Bearer '+localStorage.getItem("accessToken")
-});
+const RUTA_LISTAR_CATEGORIAS : string = environment.rutaBase+"/listarcategoria";
+const RUTA_REGISTRAR_OBJETO : string = environment.rutaBase+"/registrarobjeto";
+
 @Injectable({
   providedIn: 'root'
 })
 export class TruequeandoService { 
-  
+  REQUEST_HEADERS : HttpHeaders = new HttpHeaders({
+    'Authorization':'Bearer '+localStorage.getItem("accessToken")
+  });
 
   constructor(private httpClient : HttpClient) { }
   
-  listarObjetosUsuario(email : string){
+  listarObjetosUsuario(email : string){    
     return this.httpClient.get(
       RUTA_LISTAR_OBJETOS_USUARIOS,
       {
-        headers: REQUEST_HEADERS,
+        headers: this.REQUEST_HEADERS,
         params:{
           email
         }
@@ -31,7 +34,7 @@ export class TruequeandoService {
     return this.httpClient.get(
       RUTA_LISTAR_TRUEQUES_HECHOS_POR_USUARIO,
       {
-        headers: REQUEST_HEADERS,
+        headers: this.REQUEST_HEADERS,
         params:{
           email
         }
@@ -41,11 +44,25 @@ export class TruequeandoService {
     return this.httpClient.get(
       RUTA_LISTAR_TRUEQUES_HECHOS_A_USUARIO,
       {
-        headers: REQUEST_HEADERS,
+        headers: this.REQUEST_HEADERS,
         params:{
           email
         }
       })
+  }
+
+  listarCategorias(){
+    return this.httpClient.get(
+      RUTA_LISTAR_CATEGORIAS,
+      {
+        headers: this.REQUEST_HEADERS
+      })
+  }
+
+  registrarObjeto(objeto : Elemento){
+    return this.httpClient.post<Elemento>(RUTA_REGISTRAR_OBJETO,objeto,{
+      headers: this.REQUEST_HEADERS
+    })
   }
 
   handleError(error : HttpErrorResponse):Error{

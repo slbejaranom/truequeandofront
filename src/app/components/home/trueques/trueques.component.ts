@@ -36,7 +36,7 @@ export class TruequesComponent implements OnInit {
       this.listaElementosUsuario = await firstValueFrom(this.truequeandoService.listarObjetosUsuario(email)) as Elemento[];
     }catch(err){
       console.log(err);
-      this.router.navigateByUrl("/home/main");      
+      this.router.navigateByUrl("/home/main");
     }
   }  
 
@@ -45,7 +45,7 @@ export class TruequesComponent implements OnInit {
       this.listaTruequesHechosPorUsuario = await firstValueFrom(this.truequeandoService.listarTruequesHechosPorUsuario(email)) as Trueque[];
     }catch(err){
       console.log(err);
-      this.router.navigateByUrl("/home/main");      
+      this.router.navigateByUrl("/home/main");
     }
   }
 
@@ -56,7 +56,7 @@ export class TruequesComponent implements OnInit {
       this.listaTruequesHechosAUsuario = await firstValueFrom(this.truequeandoService.listarTruequesHechosAUsuario(email)) as Trueque[];
     }catch(err){
       console.log(err);
-      this.router.navigateByUrl("/home/main");      
-    }
+      this.router.navigateByUrl("/home/main"); 
+    }  
   }
 }
