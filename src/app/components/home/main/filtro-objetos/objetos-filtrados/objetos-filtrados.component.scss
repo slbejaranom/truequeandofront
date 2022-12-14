@@ -1,0 +1,17 @@
+.contenedor-objetos{
+    width:90%;    
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap:1vw;
+}
+$i:0;
+@for $filas from 1 through 3 {
+    @for $columnas from 2 through 5 {
+        .objeto-#{$i}{
+            grid-row: $filas;
+            grid-column: $columnas;
+        }
+        $i : $i + 1;
+    }    
+}

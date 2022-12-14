@@ -1,0 +1,9 @@
+<div class="filter-object">
+    <mat-slider min="0" max="5000000" step="10000" [(ngModel)]="precioMaximo" showTickMarks discrete>
+        <input matSliderThumb>
+    </mat-slider>
+    <label>
+        {{precioMaximo}}
+    </label>
+</div>
+<button (click)="filtrar()">Filtrar</button>

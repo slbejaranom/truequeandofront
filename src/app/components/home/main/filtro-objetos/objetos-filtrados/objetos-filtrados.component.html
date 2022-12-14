@@ -1,0 +1,5 @@
+<div class="contenedor-objetos centered">
+    <div *ngFor="let elemento of elementosFiltrados; let i = index" [ngClass]="'objeto-'+i">
+        <app-objeto [elemento]="elemento"></app-objeto>
+    </div>    
+</div>
