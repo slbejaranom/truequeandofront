@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,16 +8,7 @@ import { Router } from '@angular/router';
 })
 export class MenuHomeComponent implements OnInit {
 
-  opciones = [
-    {
-      ruta: "main",
-      texto: "Principal"
-    },
-    {
-      ruta: "trueques",
-      texto: "Trueques"
-    }
-  ];
+  @Input() opciones : any[];
 
   constructor(private router : Router) { }
 

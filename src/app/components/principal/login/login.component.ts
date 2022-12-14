@@ -45,7 +45,17 @@ export class LoginComponent implements OnInit {
           else{      
             localStorage.clear();
             localStorage.setItem("accessToken", data.token);
-            this.router.navigateByUrl("home/main");
+            let tokenArgs = atob(data.token).split(":"); 
+            switch(tokenArgs[1]){
+              case "0":
+                break;
+              case "1":
+                this.router.navigateByUrl("home/main");
+                break;
+              case "2":
+                this.router.navigateByUrl("home/olmain");
+                break;
+            }            
           }
           
         },
