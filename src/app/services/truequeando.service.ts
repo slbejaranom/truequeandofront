@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Elemento } from '../domain/elemento';
+import { Trueque } from '../domain/trueque';
 
 const RUTA_LISTAR_OBJETOS_USUARIOS : string = environment.rutaBase+"/listarelementosusuario";
 const RUTA_LISTAR_TRUEQUES_HECHOS_POR_USUARIO : string = environment.rutaBase+"/truequeshechosusuario";
@@ -9,6 +10,8 @@ const RUTA_LISTAR_TRUEQUES_HECHOS_A_USUARIO : string = environment.rutaBase+"/tr
 const RUTA_LISTAR_CATEGORIAS : string = environment.rutaBase+"/listarcategoria";
 const RUTA_REGISTRAR_OBJETO : string = environment.rutaBase+"/registrarobjeto";
 const RUTA_LISTAR_OBJETOS_OTROS_USUARIOS : string = environment.rutaBase+"/listarobjetosotrosusuarios";
+const RUTA_HACER_PROPUESTA_TRUEQUE : string = environment.rutaBase+"/propuestatrueque";
+const RUTA_ACEPTAR_TRUEQUE : string = environment.rutaBase+"/aceptartrueque";
 
 @Injectable({
   providedIn: 'root'
@@ -39,6 +42,15 @@ export class TruequeandoService {
         params:{
           email
         }
+      })
+  }
+
+  hacerPropuestaTrueque(trueque : Trueque){
+    return this.httpClient.post(
+      RUTA_HACER_PROPUESTA_TRUEQUE,
+      trueque,
+      {
+        headers: this.REQUEST_HEADERS        
       })
   }
 
@@ -75,6 +87,15 @@ export class TruequeandoService {
     return this.httpClient.post<Elemento>(RUTA_REGISTRAR_OBJETO,objeto,{
       headers: this.REQUEST_HEADERS
     })
+  }
+
+  aceptarTrueque(trueque : Trueque){
+    return this.httpClient.put<Trueque>(
+      RUTA_ACEPTAR_TRUEQUE,
+      trueque,
+      {
+        headers: this.REQUEST_HEADERS
+      });
   }
 
   handleError(error : HttpErrorResponse):Error{

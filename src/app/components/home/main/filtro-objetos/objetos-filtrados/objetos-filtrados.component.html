@@ -6,6 +6,6 @@
         <img src="../../../../../assets/right-arrow.png"/>
     </div>
     <div *ngFor="let elemento of listaNumeroElementos; let i = index" [ngClass]="'objeto-'+i">
-        <app-objeto [elemento]="listaElementosActiva[elemento]"></app-objeto>
+        <app-objeto [elemento]="listaElementosActiva[elemento]" (click)="hacerPropuestaTrueque(listaElementosActiva[elemento])"></app-objeto>
     </div>    
 </div>

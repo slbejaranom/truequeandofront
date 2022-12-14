@@ -42,7 +42,8 @@ export class PropuestasRecibidasComponent implements OnInit , OnChanges{
     this.dialog.open(component, {
       enterAnimationDuration,
       exitAnimationDuration,
-      data: trueque
+      data: trueque,
+      width:"40vw"
     });
   }
 }

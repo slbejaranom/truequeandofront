@@ -10,7 +10,7 @@
 
       <ng-container matColumnDef="fecha">
         <mat-header-cell *matHeaderCellDef> Fecha </mat-header-cell>
-        <mat-cell *matCellDef="let trueque"> {{trueque.fecha}} </mat-cell>
+        <mat-cell *matCellDef="let trueque"> {{trueque.fecha | date}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="elemento1">
@@ -30,7 +30,7 @@
 
       <ng-container matColumnDef="estado">
         <mat-header-cell *matHeaderCellDef> Estado </mat-header-cell>
-        <mat-cell *matCellDef="let trueque"> {{trueque.estado}} </mat-cell>
+        <mat-cell *matCellDef="let trueque"> {{trueque.estado | estadoAString}} </mat-cell>
       </ng-container>
 
       <mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></mat-header-row>

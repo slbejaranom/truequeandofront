@@ -32,6 +32,7 @@ import { FiltroComponent } from './components/home/main/filtro-objetos/filtro/fi
 import { ObjetosFiltradosComponent } from './components/home/main/filtro-objetos/objetos-filtrados/objetos-filtrados.component';
 import {MatSliderModule} from '@angular/material/slider';
 import { ModalPropuestaTruequeComponent } from './components/home/main/modal-propuesta-trueque/modal-propuesta-trueque.component';
+import { EstadoAString } from './components/home/trueques/propuestas-hechas/pipe/estadoPipe';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { ModalPropuestaTruequeComponent } from './components/home/main/modal-pro
     FiltroObjetosComponent,
     FiltroComponent,
     ObjetosFiltradosComponent,
-    ModalPropuestaTruequeComponent
+    ModalPropuestaTruequeComponent,
+    EstadoAString
   ],
   imports: [
     HttpClientModule,
