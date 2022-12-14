@@ -1,0 +1,11 @@
+<div class="contenedor-objetos centered">    
+    <div class="left-arrow">
+        <img src="../../../../../assets/left-arrow.png" (click)="slide(false)"/>
+    </div>
+    <div class="right-arrow" (click)="slide(true)">
+        <img src="../../../../../assets/right-arrow.png"/>
+    </div>
+    <div *ngFor="let elemento of listaNumeroElementos; let i = index" [ngClass]="'objeto-'+i">
+        <app-objeto [elemento]="listaElementosActiva[elemento]"></app-objeto>
+    </div>    
+</div>

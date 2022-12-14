@@ -1,0 +1,26 @@
+<div class="filter-container">
+    <div class="filter-object">
+        <label>Valor máximo</label>
+        <mat-slider min="0" max="5000000" step="10000" [(ngModel)]="precioMaximo" showTickMarks discrete>
+            <input matSliderThumb>
+        </mat-slider>
+        <label>
+            {{precioMaximo}}
+        </label>
+    </div>
+    <div class="filter-object">
+        <div class="centered">
+            <label>Categoria</label>
+        <select [(ngModel)]="categoriaSeleccionada">
+            <option *ngFor="let categoria of categorias">
+                {{categoria.descripcion}}
+            </option>
+        </select>
+        </div>
+    </div>
+    <div class="filter-object button">
+        <div class="centered">
+            <button (click)="filtrar()">Filtrar</button>
+        </div>
+    </div>
+</div>

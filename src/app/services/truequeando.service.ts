@@ -8,6 +8,7 @@ const RUTA_LISTAR_TRUEQUES_HECHOS_POR_USUARIO : string = environment.rutaBase+"/
 const RUTA_LISTAR_TRUEQUES_HECHOS_A_USUARIO : string = environment.rutaBase+"/truequesrecibidosusuario";
 const RUTA_LISTAR_CATEGORIAS : string = environment.rutaBase+"/listarcategoria";
 const RUTA_REGISTRAR_OBJETO : string = environment.rutaBase+"/registrarobjeto";
+const RUTA_LISTAR_OBJETOS_OTROS_USUARIOS : string = environment.rutaBase+"/listarobjetosotrosusuarios";
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +23,17 @@ export class TruequeandoService {
   listarObjetosUsuario(email : string){    
     return this.httpClient.get(
       RUTA_LISTAR_OBJETOS_USUARIOS,
+      {
+        headers: this.REQUEST_HEADERS,
+        params:{
+          email
+        }
+      })
+  }
+
+  listarObjetosOtrosUsuarios(email : string){    
+    return this.httpClient.get(
+      RUTA_LISTAR_OBJETOS_OTROS_USUARIOS,
       {
         headers: this.REQUEST_HEADERS,
         params:{
