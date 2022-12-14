@@ -22,9 +22,12 @@ export class RegisterComponent implements OnInit {
   validApellido : boolean = true;
   validDireccion : boolean = true;
   validTelefono : boolean = true;  
+  validDepartamento : boolean = true;
   serviceError : boolean = false;  
   departamentos : Departamento[] = [];
   ciudades : string[] = [];
+  municipioSeleccionado : string;
+  departamentoSeleccionado : string;
   error : Error = {
     name:"",
     message: ""
@@ -52,8 +55,8 @@ export class RegisterComponent implements OnInit {
         email:registerForm.value.username,
         password:registerForm.value.password,
         nombre:registerForm.value.nombre +" "+registerForm.value.apellido,
-        departamento: registerForm.value.departamentoSelect,
-        municipio: registerForm.value.municipioSelect,
+        departamento: this.departamentoSeleccionado,
+        municipio: this.municipioSeleccionado,
         direccion: registerForm.value.direccion,
         rol: 0
       };
@@ -87,9 +90,15 @@ export class RegisterComponent implements OnInit {
     this.validNombre = registerForm.controls["nombre"]?.valid;
     this.validDireccion = registerForm.controls["direccion"]?.valid;
     this.validTelefono = registerForm.controls["telefono"]?.valid;
+    this.validDepartamento = registerForm.controls["departamento"]?.valid;
   }
 
   onSelectDepartamento(idDepartamento : string){
-    this.ciudades = this.departamentos[Number(idDepartamento)].ciudades;
+    let departamento = this.departamentos.filter(departamento => departamento.id == Number(idDepartamento)).pop()
+    if(departamento)
+    {
+      this.departamentoSeleccionado = departamento.departamento;
+      this.ciudades = this.departamentos[Number(idDepartamento)].ciudades;
+    }
   }
 }
