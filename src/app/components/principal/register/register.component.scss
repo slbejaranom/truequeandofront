@@ -51,18 +51,22 @@ select {
   display: block;
 }
 
-.one-row-input{
+.one-row-input {
   width: 97.5%;
 }
 
-@media screen and (max-width: 800px){
-  .centered{
+@media screen and (max-width: 800px) {
+  .centered {
     position: absolute;
     margin-top: 40%;
     max-height: 50%;
   }
 
-  .formContainer{
+  input, select{
+    height: auto;
+  }
+
+  .formContainer {
     width: 100%;
   }
 
@@ -71,11 +75,11 @@ select {
     width: 100%;
   }
 
-  button{
+  button {
     width: 100%;
   }
 
-  .positive{
+  .positive {
     margin-top: 2%;
     margin-bottom: 10%;
   }
