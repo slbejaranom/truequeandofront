@@ -25,8 +25,8 @@ export class ListaObjetosComponent implements OnInit, OnChanges {
     this.dialog.open(component, {
       enterAnimationDuration,
       exitAnimationDuration,
-      height:'53%',
-      width:'40%'
+      height:'55%',
+      width:'45%'
     });
   }
 
