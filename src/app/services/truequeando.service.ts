@@ -12,6 +12,7 @@ const RUTA_REGISTRAR_OBJETO : string = environment.rutaBase+"/registrarobjeto";
 const RUTA_LISTAR_OBJETOS_OTROS_USUARIOS : string = environment.rutaBase+"/listarobjetosotrosusuarios";
 const RUTA_HACER_PROPUESTA_TRUEQUE : string = environment.rutaBase+"/propuestatrueque";
 const RUTA_ACEPTAR_TRUEQUE : string = environment.rutaBase+"/aceptartrueque";
+const RUTA_RECHAZAR_TRUEQUE : string = environment.rutaBase+"/rechazartrueque";
 
 @Injectable({
   providedIn: 'root'
@@ -92,6 +93,15 @@ export class TruequeandoService {
   aceptarTrueque(trueque : Trueque){
     return this.httpClient.put<Trueque>(
       RUTA_ACEPTAR_TRUEQUE,
+      trueque,
+      {
+        headers: this.REQUEST_HEADERS
+      });
+  }
+
+  rechazarTrueque(trueque : Trueque){
+    return this.httpClient.put<Trueque>(
+      RUTA_RECHAZAR_TRUEQUE,
       trueque,
       {
         headers: this.REQUEST_HEADERS

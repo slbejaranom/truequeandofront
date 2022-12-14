@@ -26,6 +26,7 @@ export class AceptarPropuestaComponent implements OnInit {
       let trueque = await firstValueFrom(this.truequeandoService.aceptarTrueque(this.trueque));      
       if(trueque.estado == 1){
         this.dialogRef.close();
+        window.location.reload();
       }
     }catch(err){      
       this.dialogRef.close();
