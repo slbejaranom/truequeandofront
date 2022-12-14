@@ -40,7 +40,7 @@ export class ListaObjetosComponent implements OnInit, OnChanges {
 
   ngOnChanges() : void{    
     if(this.listaElementos != undefined){
-      this.listaElementos = this.listaElementos.filter(elemento => elemento.estado != false);
+      this.listaElementos = this.listaElementos.filter(elemento => elemento.estado);
       this.numeroElementosParaMostrar = this.listaElementos.length < 4 ? this.listaElementos.length : 4;
       this.listaNumeroElementos = Array(this.numeroElementosParaMostrar).fill(0).map((x,i) => i);
       this.listaElementosActiva = this.listaElementos.slice(0, this.numeroElementosParaMostrar);

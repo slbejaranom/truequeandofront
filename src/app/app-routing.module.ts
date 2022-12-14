@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
+import { MainOperadorLogisticoComponent } from './components/home/main-operador-logistico/main-operador-logistico.component';
 import { MainComponent } from './components/home/main/main.component';
 import { TruequesComponent } from './components/home/trueques/trueques.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
@@ -9,6 +10,7 @@ import { LoginComponent } from './components/principal/login/login.component';
 import { PrincipalComponent } from './components/principal/principal.component';
 import { RegisterComponent } from './components/principal/register/register.component';
 import { AuthGuard } from './guards/auth.guard';
+import { RolGuard } from './guards/rol.guard';
 
 const routes: Routes = [
   {
@@ -32,7 +34,7 @@ const routes: Routes = [
   {
     path: "home",
     component: HomeComponent,
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuard, RolGuard],
     children:[
       {
         path: "trueques",
@@ -41,6 +43,10 @@ const routes: Routes = [
       {
         path: "main",
         component: MainComponent
+      },
+      {
+        path: "olmain",
+        component: MainOperadorLogisticoComponent
       }
     ]
   },

@@ -21,7 +21,9 @@ export class LoginComponent implements OnInit {
     message: ""
   };
 
-  constructor(private router : Router, private authService : AuthService) { }
+  constructor(private router : Router, private authService : AuthService) { 
+    localStorage.clear();
+  }
 
   ngOnInit(): void {
   }
@@ -42,10 +44,21 @@ export class LoginComponent implements OnInit {
             this.serviceError = true;
             this.error.message = data.errorMessage;                
           }
-          else{      
+          else{     
+            console.log(localStorage);             
             localStorage.clear();
             localStorage.setItem("accessToken", data.token);
-            this.router.navigateByUrl("home/main");
+            let tokenArgs = atob(data.token).split(":"); 
+            switch(tokenArgs[1]){
+              case "0":
+                break;
+              case "1":
+                this.router.navigateByUrl("home/main");
+                break;
+              case "2":
+                this.router.navigateByUrl("home/olmain");
+                break;
+            }            
           }
           
         },
