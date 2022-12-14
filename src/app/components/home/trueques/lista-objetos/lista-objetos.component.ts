@@ -49,7 +49,7 @@ export class ListaObjetosComponent implements OnInit, OnChanges {
   slide(toRight : boolean){
     this.arrayRotate(this.listaElementos, toRight);
     console.log(this.listaElementos);
-    this.ngOnInit();
+    this.ngOnChanges();
   }
   arrayRotate(arr : Array<any>, reverse : boolean) {
     if (reverse) arr.unshift(arr.pop());
