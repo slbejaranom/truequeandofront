@@ -28,6 +28,11 @@
       <mat-cell *matCellDef="let trueque"> {{trueque.elemento1.nombre}} </mat-cell>
     </ng-container>
 
+    <ng-container matColumnDef="precio">
+      <mat-header-cell *matHeaderCellDef> precio </mat-header-cell>
+      <mat-cell *matCellDef="let trueque"> {{trueque.precio | currency}} </mat-cell>
+    </ng-container>
+
     <ng-container matColumnDef="estado">
       <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
       <mat-cell *matCellDef="let trueque">
