@@ -1,2 +1,2 @@
-<div class="image objeto"><img src="{{elemento.imagen}}"/></div>
-<div class="title objeto">{{elemento.nombre}}</div>
+<div class="image objeto"><img [src]="elemento ? elemento.imagen : ''" alt="No-image"/></div>
+<div class="title objeto">{{elemento ? elemento.nombre : ""}}</div>

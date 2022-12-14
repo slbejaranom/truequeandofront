@@ -10,16 +10,18 @@ export class ObjetoComponent implements OnInit {
 
   muchoTexto:boolean = false;
 
-  @Input() elemento : Elemento;
+  @Input() elemento : Elemento | undefined;
 
   constructor() {
 
   }
 
   ngOnInit(): void {
-    if(this.elemento.nombre.length >= 19){
-      this.muchoTexto = true;
-    }
+    if(this.elemento){
+      if(this.elemento.nombre.length >= 19){
+        this.muchoTexto = true;
+      }
+    }    
   }
 
 }

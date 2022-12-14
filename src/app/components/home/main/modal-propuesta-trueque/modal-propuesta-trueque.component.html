@@ -1,1 +1,21 @@
-<p>modal-propuesta-trueque works!</p>
+<div class="modal-container">
+    <h1 mat-dialog-title>¿Está seguro que desea aceptar este trueque?</h1>
+    <h3 class="select-title">
+        <div class="centered">
+            Tus elementos disponibles
+        </div>
+    </h3>
+    <div class="object-selector">
+        <select [(ngModel)]="nombreObjetoSeleccionado" #elementos class="centered" (change)="seleccionarOtroObjeto(elementos.value)">
+            <option *ngFor="let elemento of elementosUsuario" value="{{elemento.id}}">
+                {{elemento.nombre}}
+            </option>
+        </select>
+    </div>
+    <app-objeto [elemento]="elemento" class="objeto-1"></app-objeto>
+    <app-objeto [elemento]="elementoDado" class="objeto-2"></app-objeto>
+    <div class="accept-image">
+        <img src="../../../../../../assets/transferir.png"/>
+    </div>
+    <button class="boton-confirmar" (click)="hacerPropuesta()">Confirmar</button>
+</div>

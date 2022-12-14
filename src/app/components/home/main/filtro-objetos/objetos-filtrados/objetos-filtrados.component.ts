@@ -1,5 +1,8 @@
+import { ComponentType } from '@angular/cdk/portal';
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Elemento } from 'src/app/domain/elemento';
+import { ModalPropuestaTruequeComponent } from '../../modal-propuesta-trueque/modal-propuesta-trueque.component';
 
 @Component({
   selector: 'app-objetos-filtrados',
@@ -12,7 +15,7 @@ export class ObjetosFiltradosComponent implements OnInit , OnChanges{
   numeroElementosParaMostrar : number = 4;
   listaElementosActiva : Elemento[] = [];
   listaNumeroElementos : number[]= [];
-  constructor() { }
+  constructor(private dialog : MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -33,5 +36,22 @@ export class ObjetosFiltradosComponent implements OnInit , OnChanges{
     if (reverse) arr.unshift(arr.pop());
     else arr.push(arr.shift());
     return arr;
+  }
+  hacerPropuestaTrueque(elemento:Elemento){
+    this.openDialog(
+      "100ms",
+      "100ms",
+      elemento,
+      ModalPropuestaTruequeComponent)
+  }
+  
+
+  openDialog(enterAnimationDuration: string, exitAnimationDuration: string, elemento : Elemento, component : ComponentType<any>): void {
+    this.dialog.open(component, {
+      enterAnimationDuration,
+      exitAnimationDuration,
+      data: elemento,
+      width:"50%"
+    });
   }
 }
