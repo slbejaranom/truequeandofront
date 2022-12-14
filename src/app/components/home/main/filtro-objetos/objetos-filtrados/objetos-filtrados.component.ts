@@ -21,7 +21,8 @@ export class ObjetosFiltradosComponent implements OnInit , OnChanges{
   }
 
   ngOnChanges() : void{    
-    if(this.elementosFiltrados){
+    if(this.elementosFiltrados){      
+      this.elementosFiltrados = this.elementosFiltrados.filter(elemento => elemento.estado != false);      
       this.numeroElementosParaMostrar = this.elementosFiltrados.length < 12 ? this.elementosFiltrados.length : 12;
       this.listaNumeroElementos = Array(this.numeroElementosParaMostrar).fill(0).map((x,i) => i);
       this.listaElementosActiva = this.elementosFiltrados.slice(0, this.numeroElementosParaMostrar);

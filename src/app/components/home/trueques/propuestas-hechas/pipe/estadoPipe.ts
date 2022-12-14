@@ -10,7 +10,7 @@ export class EstadoAString implements PipeTransform {
         case 1:
             return "Aceptado";
         case 2:
-            return "Terminado";
+            return "Entregado";
         case 3:
             return "Rechazado";
         default:

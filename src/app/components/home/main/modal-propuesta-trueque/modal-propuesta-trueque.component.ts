@@ -51,6 +51,7 @@ export class ModalPropuestaTruequeComponent implements OnInit {
   async listarElementosPorUsuario(email:string){
     try{
       this.elementosUsuario = await firstValueFrom(this.truequeandoService.listarObjetosUsuario(email)) as Elemento[];
+      this.elementosUsuario = this.elementosUsuario.filter(elemento => elemento.estado);
     }catch(err){
       console.log(err);
       this.dialogRef.close();

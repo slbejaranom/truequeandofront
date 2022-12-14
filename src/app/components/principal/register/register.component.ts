@@ -54,7 +54,8 @@ export class RegisterComponent implements OnInit {
         nombre:registerForm.value.nombre +" "+registerForm.value.apellido,
         departamento: registerForm.value.departamentoSelect,
         municipio: registerForm.value.municipioSelect,
-        direccion: registerForm.value.direccion
+        direccion: registerForm.value.direccion,
+        rol: 0
       };
       this.authService.register(usuario).subscribe({
         next: (data) => {

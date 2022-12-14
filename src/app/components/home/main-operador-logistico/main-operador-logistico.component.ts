@@ -11,7 +11,7 @@ import { firstValueFrom } from 'rxjs';
 })
 export class MainOperadorLogisticoComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'fecha', 'usuario1', 'elemento2', 'elemento1', 'estado'];
+  displayedColumns: string[] = ['id', 'fecha', 'usuario1', 'elemento1', 'usuario2', 'elemento1', 'estado'];
   dataSource = new Array<Trueque>;
 
   constructor(private router : Router, private truequeandoService : TruequeandoService) { }
@@ -27,7 +27,15 @@ export class MainOperadorLogisticoComponent implements OnInit {
     }
   }
 
-  entregarTrueque(trueque : Trueque) {
-
+  async entregarTrueque(trueque : Trueque) {
+    try{
+      let truequeRecibido = await firstValueFrom(this.truequeandoService.cerrarTrueque(trueque)) as Trueque;
+      if(truequeRecibido.estado == 2){
+        window.location.reload();
+      }
+    }catch(err){
+      console.log(err)
+      this.router.navigateByUrl("/");
+    }
   }
 }

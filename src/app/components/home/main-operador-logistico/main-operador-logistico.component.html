@@ -14,17 +14,22 @@
       </ng-container>
   
       <ng-container matColumnDef="usuario1">
-        <mat-header-cell *matHeaderCellDef> Esta persona </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef> Cliente 1</mat-header-cell>
         <mat-cell *matCellDef="let trueque"> {{trueque.usuario1.nombre}} </mat-cell>
       </ng-container>
-  
+
       <ng-container matColumnDef="elemento2">
-        <mat-header-cell *matHeaderCellDef> Quiere tu </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef> Recibe </mat-header-cell>
+        <mat-cell *matCellDef="let trueque"> {{trueque.elemento1.nombre}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="usuario2">
+        <mat-header-cell *matHeaderCellDef> Cliente 2 </mat-header-cell>
         <mat-cell *matCellDef="let trueque"> {{trueque.elemento2.nombre}} </mat-cell>
       </ng-container>
   
       <ng-container matColumnDef="elemento1">
-        <mat-header-cell *matHeaderCellDef> Te dará </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef> Recibe </mat-header-cell>
         <mat-cell *matCellDef="let trueque"> {{trueque.elemento1.nombre}} </mat-cell>
       </ng-container>
   
