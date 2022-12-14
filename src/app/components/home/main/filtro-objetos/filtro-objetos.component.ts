@@ -22,8 +22,7 @@ export class FiltroObjetosComponent implements OnInit {
     if(token != null){
       let tokenArgs = atob(token).split(":");
       let email = tokenArgs[0];   
-      this.listarObjetosQueNoSonDelUsuario(email);   
-      this.listarCategorias();
+      this.listarObjetosQueNoSonDelUsuario(email);         
     }  
    }
 
@@ -33,7 +32,6 @@ export class FiltroObjetosComponent implements OnInit {
   async listarObjetosQueNoSonDelUsuario(email : string){
     try{
       this.elementos = await firstValueFrom(this.truequeandoService.listarObjetosOtrosUsuarios(email)) as Elemento[];
-      console.log(this.elementos);
     }catch(err){
       console.log(err);
       this.router.navigateByUrl("/");
@@ -41,14 +39,5 @@ export class FiltroObjetosComponent implements OnInit {
   }
   actualizarElementos(event : Elemento[]){
     this.elementosFiltrados = event;
-  }
-
-  async listarCategorias(){
-    try{
-      this.categorias = await firstValueFrom(this.truequeandoService.listarCategorias()) as Categoria[];
-    }catch(err){
-      console.log(err);
-      this.router.navigateByUrl("/");
-    }
-  }
+  }  
 }

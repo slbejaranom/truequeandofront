@@ -1,5 +1,9 @@
 import { Component, Input, OnInit, Output, EventEmitter, OnChanges } from '@angular/core';
+import { Router } from '@angular/router';
+import { Categoria } from 'src/app/domain/categoria';
 import { Elemento } from 'src/app/domain/elemento';
+import { TruequeandoService } from 'src/app/services/truequeando.service';
+import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-filtro',
@@ -10,9 +14,14 @@ export class FiltroComponent implements OnInit , OnChanges{
 
   @Input() elementosSinFiltrar : Elemento[];
   @Output() newFiltradoEvent = new EventEmitter<Elemento[]>();
-  precioMaximo:number=0;
+  precioMaximo:number=5000000;
   elementosFiltrados : Elemento[];
-  constructor() { }
+  categoriaSeleccionada:string;
+  categorias : Categoria[];
+
+  constructor(private router : Router, private truequeandoService : TruequeandoService) {
+    this.listarCategorias();
+  }
 
   ngOnInit(): void {
   }
@@ -22,17 +31,25 @@ export class FiltroComponent implements OnInit , OnChanges{
     }
   }
   filtrar(){
-    if(this.precioMaximo == 0){
-      this.newFiltradoEvent.emit(this.elementosSinFiltrar);
-    }      
-    else{
-      this.elementosFiltrados = this.elementosSinFiltrar.filter(elemento => elemento.valor < this.precioMaximo);  
+    if(this.categoriaSeleccionada == undefined){
+      this.elementosFiltrados = this.elementosSinFiltrar.filter(elemento => {
+        return elemento.valor < this.precioMaximo;        
+      });        
       this.newFiltradoEvent.emit(this.elementosFiltrados);
+      return;
     }
+    this.elementosFiltrados = this.elementosSinFiltrar.filter(elemento => {
+      return elemento.valor < this.precioMaximo && elemento.categoria.descripcion == this.categoriaSeleccionada        
+    });
+    this.newFiltradoEvent.emit(this.elementosFiltrados);
   }
 
-  setPrecioMaximo(value: number):string{
-    this.precioMaximo = value;
-    return String(this.precioMaximo);
+  async listarCategorias(){
+    try{
+      this.categorias = await firstValueFrom(this.truequeandoService.listarCategorias()) as Categoria[];
+    }catch(err){
+      console.log(err);
+      this.router.navigateByUrl("/");
+    }
   }
 }

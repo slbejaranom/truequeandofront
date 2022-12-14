@@ -199,3 +199,6 @@ section::-webkit-scrollbar-thumb:active {
 .mat-dialog-container::-webkit-scrollbar-thumb:active {
   background: purple;
 }
+.mat-slider-thumb{    
+  background-color: $primary-color;
+}
