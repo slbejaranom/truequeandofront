@@ -2,9 +2,10 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Usuario } from 'src/app/domain/usuario';
+import { Cliente } from 'src/app/domain/cliente';
 import { AuthService } from 'src/app/services/auth.service';
 import { Departamento } from './dto/departamento';
+import { ErrorDTO } from './dto/errorDto';
 
 @Component({
   selector: 'app-register',
@@ -47,15 +48,24 @@ export class RegisterComponent implements OnInit {
   onsubmit(registerForm : NgForm){
     this.verifyLoginErrors(registerForm);
     if(registerForm.valid){      
-      let usuario : Usuario = {
-        id:0,
+      let usuario : Cliente = {
         email:registerForm.value.username,
         password:registerForm.value.password,
-        nombre:"",
+        nombre:registerForm.value.nombre +" "+registerForm.value.apellido,
+        departamento: registerForm.value.departamentoSelect,
+        municipio: registerForm.value.municipioSelect,
+        direccion: registerForm.value.direccion
       };
-      this.authService.auth(usuario).subscribe({
-        complete: () => {
-          //ToDo: Register session logic
+      this.authService.register(usuario).subscribe({
+        next: (data) => {
+          if(data.id){
+            this.router.navigateByUrl("/");
+          }
+          else if(data.mensaje){
+            console.log(data);            
+            this.error.message = data.mensaje;
+            this.serviceError = true;
+          }
         },
         error: (err : HttpErrorResponse) => {
           this.serviceError = true;
