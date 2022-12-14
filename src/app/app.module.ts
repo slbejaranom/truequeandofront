@@ -26,7 +26,11 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { RechazarPropuestaComponent } from './components/home/trueques/propuestas-recibidas/rechazar-propuesta/rechazar-propuesta.component';
 import { AceptarPropuestaComponent } from './components/home/trueques/propuestas-recibidas/aceptar-propuesta/aceptar-propuesta.component';
 import { MainComponent } from './components/home/main/main.component';
-import { RegistrarobjetoComponent } from './components/home/trueques/lista-objetos/registrarobjeto/registrarobjeto.component'
+import { RegistrarobjetoComponent } from './components/home/trueques/lista-objetos/registrarobjeto/registrarobjeto.component';
+import { FiltroObjetosComponent } from './components/home/main/filtro-objetos/filtro-objetos.component';
+import { FiltroComponent } from './components/home/main/filtro-objetos/filtro/filtro.component';
+import { ObjetosFiltradosComponent } from './components/home/main/filtro-objetos/objetos-filtrados/objetos-filtrados.component';
+import {MatSliderModule} from '@angular/material/slider';
 
 @NgModule({
   declarations: [
@@ -47,7 +51,10 @@ import { RegistrarobjetoComponent } from './components/home/trueques/lista-objet
     RechazarPropuestaComponent,
     AceptarPropuestaComponent,
     MainComponent,
-    RegistrarobjetoComponent
+    RegistrarobjetoComponent,
+    FiltroObjetosComponent,
+    FiltroComponent,
+    ObjetosFiltradosComponent
   ],
   imports: [
     HttpClientModule,
@@ -59,7 +66,8 @@ import { RegistrarobjetoComponent } from './components/home/trueques/lista-objet
     MatProgressSpinnerModule,
     BrowserAnimationsModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
