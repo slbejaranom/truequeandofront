@@ -12,7 +12,7 @@
         <div class="input-container-1">
             <label class="label">Categoría</label>
             <select #categoriaSelect>
-                <option *ngFor="let categoria of categorias" [value]="categoria.id">
+                <option class="option" *ngFor="let categoria of categorias" [value]="categoria.id">
                   {{categoria.descripcion}}
                 </option>
             </select>

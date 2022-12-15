@@ -1,24 +1,43 @@
 @import "../../../../../../styles.scss";
-mat-slider{
-    width:10vw;        
+
+mat-slider {
+    width: 10vw;
 }
-.filter-object{
-    width:40%;   
-    flex:1; 
+
+.filter-object {
+    width: 40%;
+    height: auto;
+    flex: 1;
     align-items: center;
     justify-content: center;
 }
-.filter-container{
-    width:60vw;
-    margin-left:auto;
-    margin-right:auto;
-    display:flex;
+
+.filter-container {
+    width: 60vw;
+    height: 20%;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
 }
-button {    
-    height: 60%;
-    width: 5vw;
+
+button {
+    width: 50%;
     border: none;
     background-color: $primary-color;
     color: white;
     font-size: medium;
+    padding: 1px 5x 1px 5px;
+}
+
+label {
+    font-size: x-large;
+}
+
+select {
+    width: 80%;
+    font-size: x-large;
+    border-radius: 10px;
+    margin-top: 2%;
+    padding: 5px 5px 5px 5px;
 }
