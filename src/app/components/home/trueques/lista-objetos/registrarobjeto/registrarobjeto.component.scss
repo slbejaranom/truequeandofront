@@ -6,7 +6,7 @@
 
 .reg-objeto-container form {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     column-gap: 3.5vw;
     display: grid;
 }
@@ -30,20 +30,32 @@
     padding: 10px 10px 10px 10px;
 }
 
+.img-selector input {
+    display: block;
+    width: 100%;
+    height: 10%;
+    padding-top: 2%;
+    padding-bottom: 1%;
+    font-size: small;
+}
+
 .imageconfig {
-   margin-top: 0;
+    margin-top: 0;
     width: 90%;
     height: 80%;
+    padding: 10px 10px 10px 10px;
 }
 
 .message-container {
     grid-row: 9;
     grid-column: 1 / span 2;
     color: red;
+    text-indent: 5%;
     text-align: justify;
+    padding-bottom: 20px;
 }
 
-button{
+button {
     padding-top: 12px;
     padding-bottom: 12px;
 }
@@ -96,19 +108,21 @@ button{
     }
 }
 
-input{
+input {
     width: 80%;
     height: 42%;
     padding-top: 1%;
     padding-bottom: 1%;
+    text-indent: 5%;
+    font-size: medium;
 }
 
-select{
+select {
     width: 82%;
     height: 60%;
 }
 
-label{
+label {
     display: block;
     width: 100%;
     padding-top: 1vh;
