@@ -120,6 +120,17 @@ input {
 select {
     width: 82%;
     height: 60%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    text-indent: 5%;
+    font-size: medium;
+}
+
+select option {
+    text-indent: 5%;
+    font-size: medium;
+    padding-top: 1%;
+    padding-bottom: 1%;
 }
 
 label {
