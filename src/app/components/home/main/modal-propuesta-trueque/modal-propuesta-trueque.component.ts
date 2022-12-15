@@ -39,10 +39,7 @@ export class ModalPropuestaTruequeComponent implements OnInit {
         usuario1 : {
           email: this.email
         },
-        usuario2 : this.elemento.cliente,
-        transportador : {
-          id: 3
-        }
+        usuario2 : this.elemento.cliente
       }
       this.hacerPropuestaTrueque(nuevoTrueque);
     }    

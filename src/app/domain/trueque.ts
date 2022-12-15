@@ -11,6 +11,6 @@ export interface Trueque{
     elemento2: Elemento,
     usuario1: Cliente,
     usuario2: Cliente,
-    transportador: OperadorLogistico,
+    transportador?: OperadorLogistico,
     precio?: number;
 }
