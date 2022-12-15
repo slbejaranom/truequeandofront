@@ -11,7 +11,7 @@ import { Trueque } from 'src/app/domain/trueque';
 export class PropuestasHechasComponent implements OnInit, OnChanges{
   @Input() trueques : Trueque[];
 
-  displayedColumns: string[] = ['id', 'fecha', 'elemento1', 'elemento2', 'usuario2', 'estado'];    
+  displayedColumns: string[] = ['id', 'fecha', 'elemento1', 'elemento2', 'usuario2','precio', 'estado'];    
   dataSource = new Array<Trueque>;
   constructor() {
 

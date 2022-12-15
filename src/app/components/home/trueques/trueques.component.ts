@@ -43,6 +43,9 @@ export class TruequesComponent implements OnInit {
   async listarTruequesHechosPorUsuario(email :string){
     try{
       this.listaTruequesHechosPorUsuario = await firstValueFrom(this.truequeandoService.listarTruequesHechosPorUsuario(email)) as Trueque[];
+      for(let trueque of this.listaTruequesHechosPorUsuario){
+        trueque.precio = await this.truequeandoService.calcularPrecio(trueque);
+      }
     }catch(err){
       console.log(err);
       this.router.navigateByUrl("/home/main");
@@ -54,6 +57,9 @@ export class TruequesComponent implements OnInit {
   async listarTruequesHechosAUsuario(email :string){
     try{
       this.listaTruequesHechosAUsuario = await firstValueFrom(this.truequeandoService.listarTruequesHechosAUsuario(email)) as Trueque[];
+      for(let trueque of this.listaTruequesHechosAUsuario){
+        trueque.precio = await this.truequeandoService.calcularPrecio(trueque);
+      }
     }catch(err){
       console.log(err);
       this.router.navigateByUrl("/home/main"); 

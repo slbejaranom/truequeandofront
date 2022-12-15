@@ -14,7 +14,7 @@ export class PropuestasRecibidasComponent implements OnInit , OnChanges{
 
   @Input() trueques : Trueque[];
 
-  displayedColumns: string[] = ['id', 'fecha', 'usuario1', 'elemento2', 'elemento1', 'estado'];
+  displayedColumns: string[] = ['id', 'fecha', 'usuario1', 'elemento2', 'elemento1','precio', 'estado'];
   dataSource = new Array<Trueque>;
 
   ngOnInit(): void {
